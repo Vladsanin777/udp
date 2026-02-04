@@ -1,8 +1,18 @@
 #include <stdint.h>
 
-#define MAX_SIZE_DATA 0xFFEB
+#include <net/if.h>
 
-#define MIN_LENGTH_HEADS_UDP_FOR_NAT 0x0014
+#include <linux/if_packet.h>
+
+#include <net/ethernet.h>
+
+#include <arpa/inet.h>
+
+#include <sys/socket.h>
+
+#define MAX_SIZE_DATA 0xFFF7
+
+#define HEADS_UDP 0x0008
 
 #define UDP_PROTOCOL 0x0011
 
@@ -10,38 +20,22 @@
 
 #define MIN(left, rigth) (((left) < (rigth)) ? (left) : (rigth))
 
-struct udp_pack {
-    uint32_t m_ip_source;
-    uint32_t m_ip_target;
-    uint16_t m_protocol;
-    uint16_t m_length_first;
+struct __attribute__((packed)) udp_pack {
     uint16_t m_port_source;
     uint16_t m_port_target;
-    uint16_t m_length_second;
+    uint16_t m_length;
     uint16_t m_checksum;
     uint8_t  m_data[MAX_SIZE_DATA + 1];
 };
 
-typedef struct udp_pack * udp_pack;
+typedef struct __attribute__((packed)) udp_pack * udp_pack;
 
 udp_pack init_udp_pack(void) {
     udp_pack pack = calloc(1, sizeof(*udp_pack));
-    pack->m_ip_source = 0x00000000;
-    pack->m_ip_target = 0x00000000;
-    pack->m_protocol = UDP_PROTOCOL;
-    pack->m_length_first = MIN_LENGTH_HEADS_UDP_FOR_NAT;
     pack->m_port_source = 0x0000;
     pack->m_port_target = 0x0000;
-    pack->m_length_second = MIN_LENGTH_HEADS_UDP_FOR_NAT;
+    pack->m_length_second = HEADS_UDP;
     pack->m_checksum = NULL_CHECKSUM;
-}
-
-void set_ip_source_udp_pack(udp_pack pack, uint32_t ip) {
-    pack->m_ip_source = ip;
-}
-
-void set_ip_target_udp_pack(udp_pack pack, uint32_t ip) {
-    pack->m_ip_target = ip;
 }
 
 void set_port_source_udp_pack(udp_pack pack, uint16_t port) {
@@ -54,8 +48,7 @@ void set_port_target_udp_pack(udp_pack pack, uint16_t port) {
 
 void set_data(udp_pack pack, void * data, size_t size) {
     uint16_t size = MIN(size, MAX_SIZE_DATA);
-    pack->m_length_first = pack->m_length_second = \
-                        MIN_LENGTH_HEADS_UDP_FOR_NAT + size;
+    pack->m_length = MIN_LENGTH_HEADS_UDP_FOR_NAT + size;
     memcpy(pack->m_data, data, size);
 }
 
@@ -68,6 +61,40 @@ void calculate_checksum_udp_pack(udp_pack pack) {
     for (; ptr < ptr_end; ptr++)
         checksum += *ptr;
     pack->m_checksum = checksum;
+}
+
+int send_udp_pack_interface(udp_pack pack) {
+    struct sockaddr_ll sockaddr = { 0 };
+    int fd_sock = 0;
+    int ret = 0;
+
+    fd_sock = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
+
+    if (fd_sock == -1) {
+        ret = fd_sock;
+        perror("ERROR: get fd sock, please lauhce with root");
+        goto give_not_fd_socket;
+    }
+
+    sockaddr.sll_family = AF_PACKET;
+    sockaddr.sll_ifindex = if_index;
+    sockaddr.sll_halen = ETH_ALEN;
+    sockaddr.sll_protocol = htons(ETH_P_ALL);
+
+    memset(sockaddr.sll_addr, 0xff, ETH_ALEN);
+
+    ret = sendto(fd_sock, pack, pack->m_length, 0, \
+            (struct sockaddr *)&sockaddr, sizeof(sockaddr));
+
+    if (ret) {
+        perror("ERROR: send not UDP pack");
+        goto send_not_udp_pack;
+    }
+
+    return ret;
+give_not_fd_socket:
+send_not_udp_pack:
+    return ret;
 }
 
 void destroy_udp_pack(udp_pack pack) {
