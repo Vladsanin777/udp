@@ -3,7 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/ioctl.h>
+#include <sys/stat.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <getopt.h>
+#include <errno.h>
 
 #include <net/if.h>
 
@@ -43,6 +47,7 @@ struct __attribute__((packed)) udp_pack {
     struct iphdr m_iphdr;
     struct udp_head m_head;
     uint8_t  m_data[MAX_SIZE_DATA];
+    char * m_interface;
 };
 
 typedef struct udp_pack * udp_pack;
@@ -68,12 +73,12 @@ udp_pack init_udp_pack(void) {
     return pack;
 }
 
-void set_port_source_udp_pack(udp_pack pack, uint16_t port) {
-    pack->m_head.m_port_source = htons(port);
+void set_port_source_udp_pack(udp_pack pack, const char * const port) {
+    pack->m_head.m_port_source = htons(atoi(port));
 }
 
-void set_port_destination_udp_pack(udp_pack pack, uint16_t port) {
-    pack->m_head.m_port_destination = htons(port);
+void set_port_destination_udp_pack(udp_pack pack, const char * const port) {
+    pack->m_head.m_port_destination = htons(atoi(port));
 }
 
 void set_ip_source_udp_pack(udp_pack pack, const char * const ip) {
@@ -84,12 +89,100 @@ void set_ip_destination_udp_pack(udp_pack pack, const char * const ip) {
     pack->m_iphdr.daddr = inet_addr(ip);
 }
 
-void set_data_udp_pack(udp_pack pack, void * data, uint16_t size) {
-    size = MIN(size, MAX_SIZE_DATA);
+void set_size_udp_pack(udp_pack pack, uint16_t size) {
+    printf("new size udp pack: %d\n", size);
     pack->m_head.m_length = htons(HEAD_UDP + size);
     pack->m_iphdr.tot_len = htons(HEAD_UDP_IP + size);
-    printf("%hd\n", ntohs(pack->m_head.m_length));
+}
+
+uint16_t get_size_udp_pack(udp_pack pack) {
+    return ntohs(pack->m_head.m_length) - HEAD_UDP;
+}
+
+void add_date_udp_pack(udp_pack pack, void * data, uint16_t size) {
+    uint16_t old_size = get_size_udp_pack(pack);
+    uint16_t new_raw_size = old_size + size;
+    uint16_t new_size = MIN(new_raw_size, MAX_SIZE_DATA);
+    uint16_t overflow_size = new_raw_size - new_size;
+    printf("old size udp pack: %d\n", old_size);
+    if (new_size == MAX_SIZE_DATA)
+        size -= overflow_size;
+    memcpy(pack->m_data + old_size, data, size);
+    set_size_udp_pack(pack, new_size);
+}
+
+void set_data_udp_pack(udp_pack pack, void * data, uint16_t size) {
+    size = MIN(size, MAX_SIZE_DATA);
     memcpy(pack->m_data, data, size);
+    set_size_udp_pack(pack, size);
+}
+
+int add_symbol_udp_pack(udp_pack pack, uint8_t symbol) {
+    int ret = 0;
+    uint16_t size = get_size_udp_pack(pack);
+    if (size == MAX_SIZE_DATA) {
+        ret = -ENOMEM;
+        goto error_overflow_max_size;
+    }
+    *((uint8_t *)pack->m_data + size) = symbol;
+    set_size_udp_pack(pack, size + 1);
+    return ret;
+error_overflow_max_size:
+    return ret;
+}
+
+int set_input_data_udp_pack(udp_pack pack) {
+    int ret = 0;
+    char symbol = '\0';
+    while ((symbol = getchar()) != EOF) {
+        ret = add_symbol_udp_pack(pack, symbol);
+        if (ret)
+            goto error_overflow_max_size;
+    }
+    return ret;
+error_overflow_max_size:
+    return ret;
+}
+
+
+int set_file_data_udp_pack(udp_pack pack, const char * const file_name) {
+    int fd = 0;
+    int ret = 0;
+    uint16_t size = 0;
+    struct stat st;
+    fd = open(file_name, O_RDONLY);
+    if (fd < 0) {
+        perror("ERROR: get not fd for set file data udp pack");
+        ret = fd;
+        goto get_not_fd_set_file_data;
+    }
+    ret = fstat(fd, &st);
+
+    if (ret) {
+        perror("ERROR: error request stat for set file data udp pack");
+        goto error_request_stat_for_set_data_udp_pack;
+    }
+
+    size = MIN(st.st_size, MAX_SIZE_DATA);
+
+    ret = read(fd, pack->m_data, size);
+
+
+    if (ret) {
+        perror("ERROR: read not for set file data udp pack");
+        goto error_read_not_for_set_file_data_udp_pack;
+    }
+
+    set_size_udp_pack(pack, size);
+
+    close(fd);
+
+    return ret;
+error_read_not_for_set_file_data_udp_pack:
+error_request_stat_for_set_data_udp_pack:
+    close(fd);
+get_not_fd_set_file_data:
+    return ret;
 }
 
 uint32_t sum_compute(void *ptr, int nbytes) {
@@ -141,7 +234,14 @@ void calculate_checksum_udp_pack(udp_pack pack) {
             sum_compute(&pack->m_head, ntohs(pack->m_head.m_length)));
 }
 
-int send_interface_udp_pack(udp_pack pack, const char * const interface) {
+void set_interface_udp_pack( \
+        udp_pack pack, const char * const interface) {
+    if (pack->m_interface)
+        free(pack->m_interface);
+    pack->m_interface = strdup(interface);
+}
+
+int send_udp_pack(udp_pack pack) {
     struct ifreq ifr;
     struct sockaddr_ll sockaddr_ll = {0};
     int fd_sock = 0;
@@ -157,7 +257,7 @@ int send_interface_udp_pack(udp_pack pack, const char * const interface) {
         goto give_not_fd_socket;
     }
 
-    strncpy(ifr.ifr_name, interface, IFNAMSIZ);
+    strncpy(ifr.ifr_name, pack->m_interface, IFNAMSIZ);
     ret = ioctl(fd_sock, SIOCGIFINDEX, &ifr);
 
     if (ret) {
@@ -182,17 +282,68 @@ give_not_siocgifindex:
 }
 
 void destroy_udp_pack(udp_pack pack) {
+    if (pack->m_interface)
+        free(pack->m_interface);
     free(pack);
 }
 
 int main(int argc, char ** argv) {
+    int data = '\0';
+    int cmd = true;
+    int option_index = 0;
+
+    static struct option long_options[] = { \
+        {"stdio", no_argument, NULL, 'w'}, \
+        {"ip-destination", 1, NULL, 'i'}, \
+        {"ip-source", 1, NULL, 's'}, \
+        {"port-destanition", 1, NULL, 'p'}, \
+        {"port-source", 1, NULL, 'o'}, \
+        {"interface", 1, NULL, 'n'}, \
+        {NULL, 0, NULL, '\0'}, \
+    };
+
     udp_pack pack = init_udp_pack();
-    set_port_source_udp_pack(pack, 8001);
-    set_port_destination_udp_pack(pack, 8003);
-    set_ip_source_udp_pack(pack, "171.0.0.1");
-    set_ip_destination_udp_pack(pack, "171.0.0.1");
-    set_data_udp_pack(pack, "test", 5);
-    send_interface_udp_pack(pack, argv[1]);
+
+    while (cmd) {
+        cmd = getopt_long(argc, argv, "wi:s:p:o:n:", long_options, &option_index);
+
+        switch (cmd) {
+            case 'w':
+                data = cmd;
+                set_input_data_udp_pack(pack);
+                break;
+            case 'i':
+                set_ip_destination_udp_pack(pack, optarg);
+                break;
+            case 's':
+                set_ip_source_udp_pack(pack, optarg);
+                break;
+            case 'p':
+                set_port_destination_udp_pack(pack, optarg);
+                break;
+            case 'o':
+                set_port_source_udp_pack(pack, optarg);
+                break;
+            case 'n':
+                set_interface_udp_pack(pack, optarg);
+                break;
+            case 'f':
+                data = cmd;
+                set_file_data_udp_pack(pack, optarg);
+                break;
+            case '?':
+                break;
+            case -1:
+                goto exit_parsing_comand;
+            default:
+                break;
+        }
+    }
+exit_parsing_comand:
+    if (data == '\0')
+        for (; optind < argc; optind++)
+            add_date_udp_pack(pack, argv[optind], strlen(argv[optind]));
+    send_udp_pack(pack);
     destroy_udp_pack(pack);
     return 0;
 }
