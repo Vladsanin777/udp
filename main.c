@@ -92,14 +92,14 @@ void set_data_udp_pack(udp_pack pack, void * data, uint16_t size) {
     memcpy(pack->m_data, data, size);
 }
 
-uint32_t sum_compute(uint16_t *ptr, int nbytes) {
-    uint32_t sum = 0;
+uint32_t sum_compute(void *ptr, int nbytes) {
+    uint32_t sum = htons(0x00);
 
-    for (; nbytes > 1; nbytes -= 2)
-        sum += *ptr++;
+    for (; nbytes > 1; nbytes -= 2, ptr+=2)
+        sum += htons(*(uint16_t *)ptr);
 
     if (nbytes == 1)
-        sum += ((*(uint8_t *)ptr) & htons(0xFF00));
+        sum += htons(*(uint8_t *)ptr);
 
     return sum;
 }
@@ -107,7 +107,11 @@ uint32_t sum_compute(uint16_t *ptr, int nbytes) {
 uint16_t checksum_compute(uint32_t sum) {
     while (sum >> 16)
         sum = (sum & 0xFFFF) + (sum >> 16);
-    return ~sum;
+
+    if (sum == 0xFFFF)
+        return sum;
+
+    return htons(~sum);
 }
 
 struct pseudo_header {
@@ -124,7 +128,7 @@ void calculate_checksum_udp_pack(udp_pack pack) {
     struct pseudo_header psh;
 
     pack->m_iphdr.check = NULL_CHECKSUM;
-    pack->m_iphdr.check = checksum_compute(sum_compute((uint16_t*)&pack->m_iphdr, HEAD_IP));
+    pack->m_iphdr.check = checksum_compute(sum_compute(&pack->m_iphdr, HEAD_IP));
 
     pack->m_head.m_checksum = NULL_CHECKSUM;
 
@@ -133,10 +137,8 @@ void calculate_checksum_udp_pack(udp_pack pack) {
     psh.placeholder = 0x00;
     psh.protocol = pack->m_iphdr.protocol;
     psh.udp_length = pack->m_head.m_length;
-    pack->m_head.m_checksum = checksum_compute(sum_compute((uint16_t *)&psh, HEAD_PSEUDO) + \
-            sum_compute((uint16_t *)&pack->m_head, ntohs(pack->m_head.m_length)));
-    if (pack->m_head.m_checksum == 0)
-        pack->m_head.m_checksum = 0xFFFF;
+    pack->m_head.m_checksum = checksum_compute(sum_compute(&psh, HEAD_PSEUDO) + \
+            sum_compute(&pack->m_head, ntohs(pack->m_head.m_length)));
 }
 
 int send_interface_udp_pack(udp_pack pack, const char * const interface) {
@@ -144,6 +146,8 @@ int send_interface_udp_pack(udp_pack pack, const char * const interface) {
     struct sockaddr_ll sockaddr_ll = {0};
     int fd_sock = 0;
     int ret = 0;
+
+    calculate_checksum_udp_pack(pack);
 
     fd_sock = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
 
@@ -188,7 +192,6 @@ int main(int argc, char ** argv) {
     set_ip_source_udp_pack(pack, "171.0.0.1");
     set_ip_destination_udp_pack(pack, "171.0.0.1");
     set_data_udp_pack(pack, "test", 5);
-    calculate_checksum_udp_pack(pack);
     send_interface_udp_pack(pack, argv[1]);
     destroy_udp_pack(pack);
     return 0;
