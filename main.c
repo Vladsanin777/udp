@@ -1,75 +1,80 @@
-#include <stdint.h>
+#include "udp_lib/udp.h"
+#include <getopt.h>
+#include <stddef.h>
+#include <string.h>
 
-#define MAX_SIZE_DATA 0xFFEB
+/* TODO mac address and gettors. */
 
-#define MIN_LENGTH_HEADS_UDP_FOR_NAT 0x0014
+int main(int argc, char ** argv) {
+    int ret = 0;
+    int data = '\0';
+    int cmd = true;
+    int option_index = 0;
 
-#define UDP_PROTOCOL 0x0011
+    static struct option long_options[] = { \
+        {"stdio", no_argument, NULL, 'w'}, \
+        {"ip-destination", 1, NULL, 'i'}, \
+        {"ip-source", 1, NULL, 's'}, \
+        {"port-destanition", 1, NULL, 'p'}, \
+        {"port-source", 1, NULL, 'o'}, \
+        {"interface", 1, NULL, 'n'}, \
+        {"file", 1, NULL, 'f'}, \
+        {NULL, 0, NULL, '\0'}, \
+    };
 
-#define NULL_CHECKSUM 0x0000
+    udp_pack_t pack = init_udp_pack();
 
-#define MIN(left, rigth) (((left) < (rigth)) ? (left) : (rigth))
+    if (pack == NULL) {
+        ret = -1;
+        goto get_not_memory_udp_pack;
+    }
 
-struct udp_pack {
-    uint32_t m_ip_source;
-    uint32_t m_ip_target;
-    uint16_t m_protocol;
-    uint16_t m_length_first;
-    uint16_t m_port_source;
-    uint16_t m_port_target;
-    uint16_t m_length_second;
-    uint16_t m_checksum;
-    uint8_t  m_data[MAX_SIZE_DATA + 1];
-};
+    while (cmd) {
+        cmd = getopt_long(argc, argv, "wi:s:p:o:n:f:", long_options, &option_index);
 
-typedef struct udp_pack * udp_pack;
-
-udp_pack init_udp_pack(void) {
-    udp_pack pack = calloc(1, sizeof(*udp_pack));
-    pack->m_ip_source = 0x00000000;
-    pack->m_ip_target = 0x00000000;
-    pack->m_protocol = UDP_PROTOCOL;
-    pack->m_length_first = MIN_LENGTH_HEADS_UDP_FOR_NAT;
-    pack->m_port_source = 0x0000;
-    pack->m_port_target = 0x0000;
-    pack->m_length_second = MIN_LENGTH_HEADS_UDP_FOR_NAT;
-    pack->m_checksum = NULL_CHECKSUM;
-}
-
-void set_ip_source_udp_pack(udp_pack pack, uint32_t ip) {
-    pack->m_ip_source = ip;
-}
-
-void set_ip_target_udp_pack(udp_pack pack, uint32_t ip) {
-    pack->m_ip_target = ip;
-}
-
-void set_port_source_udp_pack(udp_pack pack, uint16_t port) {
-    pack->m_port_source = port;
-}
-
-void set_port_target_udp_pack(udp_pack pack, uint16_t port) {
-    pack->m_port_target = port;
-}
-
-void set_data(udp_pack pack, void * data, size_t size) {
-    uint16_t size = MIN(size, MAX_SIZE_DATA);
-    pack->m_length_first = pack->m_length_second = \
-                        MIN_LENGTH_HEADS_UDP_FOR_NAT + size;
-    memcpy(pack->m_data, data, size);
-}
-
-void calculate_checksum_udp_pack(udp_pack pack) {
-    uint16_t length = pack->m_length_first;
-    uint16_t checksum = NULL_CHECKSUM;
-    uint16_t * ptr = (uint16_t *)pack;
-    uint16_t * ptr_end = (uint8_t *)pack+length;
-    pack->m_checksum = NULL_CHECKSUM;
-    for (; ptr < ptr_end; ptr++)
-        checksum += *ptr;
-    pack->m_checksum = checksum;
-}
-
-void destroy_udp_pack(udp_pack pack) {
-    free(pack);
+        switch (cmd) {
+            case 'w':
+                data = cmd;
+                ret = set_input_data_udp_pack(pack);
+                break;
+            case 'i':
+                ret = set_ip_destination_udp_pack(pack, optarg);
+                break;
+            case 's':
+                ret = set_ip_source_udp_pack(pack, optarg);
+                break;
+            case 'p':
+                ret = set_port_destination_udp_pack(pack, optarg);
+                break;
+            case 'o':
+                ret = set_port_source_udp_pack(pack, optarg);
+                break;
+            case 'n':
+                ret = set_interface_udp_pack(pack, optarg);
+                break;
+            case 'f':
+                data = cmd;
+                ret = set_file_data_udp_pack(pack, optarg);
+                break;
+            case '?':
+                break;
+            case -1:
+                goto exit_parsing_comand;
+            default:
+                break;
+        }
+        if (ret)
+            goto error_in_action;
+    }
+exit_parsing_comand:
+    if (data == '\0')
+        for (; optind < argc; optind++)
+            add_date_udp_pack(pack, argv[optind], strlen(argv[optind]));
+    send_udp_pack(pack);
+    destroy_udp_pack(pack);
+    return 0;
+error_in_action:
+    destroy_udp_pack(pack);
+get_not_memory_udp_pack:
+    return ret;
 }
