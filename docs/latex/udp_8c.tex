@@ -1,0 +1,168 @@
+\doxysection{udp\+\_\+lib/\+udp.c File Reference}
+\hypertarget{udp_8c}{}\label{udp_8c}\index{udp\_lib/udp.c@{udp\_lib/udp.c}}
+
+
+Code file for work udp package.  
+
+
+{\ttfamily \+\#include "{}udp\+\_\+lib/\+udp.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+ioctl.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+stat.\+h$>$}\newline
+{\ttfamily \+\#include $<$unistd.\+h$>$}\newline
+{\ttfamily \+\#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \+\#include $<$errno.\+h$>$}\newline
+{\ttfamily \+\#include $<$net/\+if.\+h$>$}\newline
+{\ttfamily \+\#include $<$linux/\+if\+\_\+packet.\+h$>$}\newline
+{\ttfamily \+\#include $<$net/\+ethernet.\+h$>$}\newline
+{\ttfamily \+\#include $<$arpa/\+inet.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+socket.\+h$>$}\newline
+{\ttfamily \+\#include $<$netinet/\+ip.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structudp__head}{udp\+\_\+head}}
+\begin{DoxyCompactList}\small\item\em Struct is header UDP pack. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structudp__pack}{udp\+\_\+pack}}
+\begin{DoxyCompactList}\small\item\em Struct is UDP package. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structpseudo__header}{pseudo\+\_\+header}}
+\begin{DoxyCompactList}\small\item\em Struct \doxylink{structpseudo__header}{pseudo\+\_\+header} for calculate checksum for UDP package. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_a36d525cf4d116b2fe4ecc00222b256f1}{PACKED}}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((packed))
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_aec1b28544d6f0672b991789c282e16fd}{HEAD\+\_\+\+ETH}}~sizeof(struct ethhdr)
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_aa46766dfe4357cb2ba08de4344ee9366}{HEAD\+\_\+\+UDP}}~sizeof(struct \doxymbox{\hyperlink{structudp__head}{udp\+\_\+head}})
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_a9667894cdd66fb6b19be4d60ac02483d}{HEAD\+\_\+\+IP}}~sizeof(struct iphdr)
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_a0a5a4d5e273fa9c6995127f98cfec6b6}{HEAD\+\_\+\+UDP\+\_\+\+IP}}~(\doxymbox{\hyperlink{udp_8c_a9667894cdd66fb6b19be4d60ac02483d}{HEAD\+\_\+\+IP}} + \doxymbox{\hyperlink{udp_8c_aa46766dfe4357cb2ba08de4344ee9366}{HEAD\+\_\+\+UDP}})
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_a5f7568f936b1afc62073b2fe491b0a7c}{MAX\+\_\+\+SIZE\+\_\+\+DATA}}~(0x\+FFFF -\/ \doxymbox{\hyperlink{udp_8c_a0a5a4d5e273fa9c6995127f98cfec6b6}{HEAD\+\_\+\+UDP\+\_\+\+IP}})
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_aee522b95f75b45cd12aeff278dcfe436}{NULL\+\_\+\+CHECKSUM}}~0x0000
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_a17ad6dbdbca3720a9127f050c6e109fb}{MIN}}(left,  rigth)
+\item 
+\+\#define \doxymbox{\hyperlink{udp_8c_a8c26df40665185c249ae3e05b539769a}{HEAD\+\_\+\+PSEUDO}}~sizeof(struct \doxymbox{\hyperlink{structpseudo__header}{pseudo\+\_\+header}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack}} (void)
+\begin{DoxyCompactList}\small\item\em Function for create object UDP package. \end{DoxyCompactList}\item 
+static uint16\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaa2953647f643ce72255133a39adabe1f}{inet\+\_\+port}} (const char \texorpdfstring{$\ast$}{*}const port)
+\begin{DoxyCompactList}\small\item\em Function support for parsing port. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaf1e2ebce0c63dad760436f66b5cca525}{set\+\_\+port\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const port)
+\begin{DoxyCompactList}\small\item\em Function for setting source port in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}{set\+\_\+port\+\_\+destination\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const port)
+\begin{DoxyCompactList}\small\item\em Function for setting destination port in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
+\begin{DoxyCompactList}\small\item\em Function for setting source ip in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}{set\+\_\+ip\+\_\+destination\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
+\begin{DoxyCompactList}\small\item\em Function for setting destination ip in UDP package. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{group__UdpPack_ga971cf1276d8804cc735075ee12142911}{set\+\_\+size\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function raw write size UDP package. \end{DoxyCompactList}\item 
+uint16\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga82c7f136a32df0299f5e5563094fbc4a}{get\+\_\+size\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function give size data in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga5084a9ee28a51e81d4f1972b102a8883}{add\+\_\+date\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, void \texorpdfstring{$\ast$}{*}data, const uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function addition data in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga6215aa14b1ee5e7d0e14a0939a27afa2}{set\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, void \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function overriding data in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga9f171c629d5f8a7ff24ccd920dd0bf69}{add\+\_\+byte\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Function addition byte in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaf49eea4ce97362fed222c0d35f4e80b6}{set\+\_\+input\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function read data from stdin in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga0e4c3a45b2cddd95cd6369ce1138eea1}{set\+\_\+file\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Function read data from file in UDP package. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga26e66504e0ce6f97f3345b70f4104729}{sum\+\_\+compute}} (void \texorpdfstring{$\ast$}{*}ptr, uint16\+\_\+t nbytes)
+\begin{DoxyCompactList}\small\item\em Function calculate sum in big endian. \end{DoxyCompactList}\item 
+static uint16\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga66ca52b0aa857eb5f90b5be48a251a73}{checksum\+\_\+compute}} (uint32\+\_\+t sum)
+\begin{DoxyCompactList}\small\item\em Function calculating from sum big endian to checksum big endian. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{group__UdpPack_ga43bd25d43834b433711fdf4b1ee6fd8e}{calculate\+\_\+checksum\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function calculate checksum for ip header and UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga6c39bc361feefc6b011fb569fa8d3b00}{set\+\_\+interface\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const interface)
+\begin{DoxyCompactList}\small\item\em Function for pick interface to send UDP package. \end{DoxyCompactList}\item 
+static void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga717eca5df0b8bed19c0872838f62ef94}{get\+\_\+pack\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function raw get pointer on UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga4cb18d49955b5f28a3b5087c585ef31c}{send\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function to send UDP package. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function free UDP package. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Code file for work udp package. 
+
+\begin{DoxyAuthor}{Author}
+Vladsanin777 
+\end{DoxyAuthor}
+
+
+\label{doc-define-members}
+\Hypertarget{udp_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{udp_8c_aec1b28544d6f0672b991789c282e16fd}\index{udp.c@{udp.c}!HEAD\_ETH@{HEAD\_ETH}}
+\index{HEAD\_ETH@{HEAD\_ETH}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{HEAD\_ETH}{HEAD\_ETH}}
+{\footnotesize\ttfamily \label{udp_8c_aec1b28544d6f0672b991789c282e16fd} 
+\+\#define HEAD\+\_\+\+ETH~sizeof(struct ethhdr)}
+
+\Hypertarget{udp_8c_a9667894cdd66fb6b19be4d60ac02483d}\index{udp.c@{udp.c}!HEAD\_IP@{HEAD\_IP}}
+\index{HEAD\_IP@{HEAD\_IP}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{HEAD\_IP}{HEAD\_IP}}
+{\footnotesize\ttfamily \label{udp_8c_a9667894cdd66fb6b19be4d60ac02483d} 
+\+\#define HEAD\+\_\+\+IP~sizeof(struct iphdr)}
+
+\Hypertarget{udp_8c_a8c26df40665185c249ae3e05b539769a}\index{udp.c@{udp.c}!HEAD\_PSEUDO@{HEAD\_PSEUDO}}
+\index{HEAD\_PSEUDO@{HEAD\_PSEUDO}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{HEAD\_PSEUDO}{HEAD\_PSEUDO}}
+{\footnotesize\ttfamily \label{udp_8c_a8c26df40665185c249ae3e05b539769a} 
+\+\#define HEAD\+\_\+\+PSEUDO~sizeof(struct \doxymbox{\hyperlink{structpseudo__header}{pseudo\+\_\+header}})}
+
+\Hypertarget{udp_8c_aa46766dfe4357cb2ba08de4344ee9366}\index{udp.c@{udp.c}!HEAD\_UDP@{HEAD\_UDP}}
+\index{HEAD\_UDP@{HEAD\_UDP}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{HEAD\_UDP}{HEAD\_UDP}}
+{\footnotesize\ttfamily \label{udp_8c_aa46766dfe4357cb2ba08de4344ee9366} 
+\+\#define HEAD\+\_\+\+UDP~sizeof(struct \doxymbox{\hyperlink{structudp__head}{udp\+\_\+head}})}
+
+\Hypertarget{udp_8c_a0a5a4d5e273fa9c6995127f98cfec6b6}\index{udp.c@{udp.c}!HEAD\_UDP\_IP@{HEAD\_UDP\_IP}}
+\index{HEAD\_UDP\_IP@{HEAD\_UDP\_IP}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{HEAD\_UDP\_IP}{HEAD\_UDP\_IP}}
+{\footnotesize\ttfamily \label{udp_8c_a0a5a4d5e273fa9c6995127f98cfec6b6} 
+\+\#define HEAD\+\_\+\+UDP\+\_\+\+IP~(\doxymbox{\hyperlink{udp_8c_a9667894cdd66fb6b19be4d60ac02483d}{HEAD\+\_\+\+IP}} + \doxymbox{\hyperlink{udp_8c_aa46766dfe4357cb2ba08de4344ee9366}{HEAD\+\_\+\+UDP}})}
+
+\Hypertarget{udp_8c_a5f7568f936b1afc62073b2fe491b0a7c}\index{udp.c@{udp.c}!MAX\_SIZE\_DATA@{MAX\_SIZE\_DATA}}
+\index{MAX\_SIZE\_DATA@{MAX\_SIZE\_DATA}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_SIZE\_DATA}{MAX\_SIZE\_DATA}}
+{\footnotesize\ttfamily \label{udp_8c_a5f7568f936b1afc62073b2fe491b0a7c} 
+\+\#define MAX\+\_\+\+SIZE\+\_\+\+DATA~(0x\+FFFF -\/ \doxymbox{\hyperlink{udp_8c_a0a5a4d5e273fa9c6995127f98cfec6b6}{HEAD\+\_\+\+UDP\+\_\+\+IP}})}
+
+\Hypertarget{udp_8c_a17ad6dbdbca3720a9127f050c6e109fb}\index{udp.c@{udp.c}!MIN@{MIN}}
+\index{MIN@{MIN}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \label{udp_8c_a17ad6dbdbca3720a9127f050c6e109fb} 
+\+\#define MIN(\begin{DoxyParamCaption}\item[{}]{left}{, }\item[{}]{rigth}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(((left)\ <\ (rigth))\ ?\ (left)\ :\ (rigth))}
+
+\end{DoxyCode}
+\Hypertarget{udp_8c_aee522b95f75b45cd12aeff278dcfe436}\index{udp.c@{udp.c}!NULL\_CHECKSUM@{NULL\_CHECKSUM}}
+\index{NULL\_CHECKSUM@{NULL\_CHECKSUM}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{NULL\_CHECKSUM}{NULL\_CHECKSUM}}
+{\footnotesize\ttfamily \label{udp_8c_aee522b95f75b45cd12aeff278dcfe436} 
+\+\#define NULL\+\_\+\+CHECKSUM~0x0000}
+
+\Hypertarget{udp_8c_a36d525cf4d116b2fe4ecc00222b256f1}\index{udp.c@{udp.c}!PACKED@{PACKED}}
+\index{PACKED@{PACKED}!udp.c@{udp.c}}
+\doxysubsubsection{\texorpdfstring{PACKED}{PACKED}}
+{\footnotesize\ttfamily \label{udp_8c_a36d525cf4d116b2fe4ecc00222b256f1} 
+\+\#define PACKED~\+\_\+\+\_\+attribute\+\_\+\+\_\+((packed))}
+

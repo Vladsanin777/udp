@@ -1,0 +1,703 @@
+\doxysection{work for udp }
+\hypertarget{group__UdpPack}{}\label{group__UdpPack}\index{work for udp@{work for udp}}
+
+
+Group function for work udp package.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structudp__head}{udp\+\_\+head}}
+\begin{DoxyCompactList}\small\item\em Struct is header UDP pack. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structudp__pack}{udp\+\_\+pack}}
+\begin{DoxyCompactList}\small\item\em Struct is UDP package. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structpseudo__header}{pseudo\+\_\+header}}
+\begin{DoxyCompactList}\small\item\em Struct \doxylink{structpseudo__header}{pseudo\+\_\+header} for calculate checksum for UDP package. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \doxymbox{\hyperlink{structudp__pack}{udp\+\_\+pack}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em UDP packet descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaa2953647f643ce72255133a39adabe1f}{inet\+\_\+port}} (const char \texorpdfstring{$\ast$}{*}const port)
+\begin{DoxyCompactList}\small\item\em Function support for parsing port. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{group__UdpPack_ga971cf1276d8804cc735075ee12142911}{set\+\_\+size\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function raw write size UDP package. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga26e66504e0ce6f97f3345b70f4104729}{sum\+\_\+compute}} (void \texorpdfstring{$\ast$}{*}ptr, uint16\+\_\+t nbytes)
+\begin{DoxyCompactList}\small\item\em Function calculate sum in big endian. \end{DoxyCompactList}\item 
+static uint16\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga66ca52b0aa857eb5f90b5be48a251a73}{checksum\+\_\+compute}} (uint32\+\_\+t sum)
+\begin{DoxyCompactList}\small\item\em Function calculating from sum big endian to checksum big endian. \end{DoxyCompactList}\item 
+static void \doxymbox{\hyperlink{group__UdpPack_ga43bd25d43834b433711fdf4b1ee6fd8e}{calculate\+\_\+checksum\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function calculate checksum for ip header and UDP package. \end{DoxyCompactList}\item 
+static void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga717eca5df0b8bed19c0872838f62ef94}{get\+\_\+pack\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function raw get pointer on UDP package. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack}} (void)
+\begin{DoxyCompactList}\small\item\em Function for create object UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaf1e2ebce0c63dad760436f66b5cca525}{set\+\_\+port\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const port)
+\begin{DoxyCompactList}\small\item\em Function for setting source port in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}{set\+\_\+port\+\_\+destination\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const port)
+\begin{DoxyCompactList}\small\item\em Function for setting destination port in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
+\begin{DoxyCompactList}\small\item\em Function for setting source ip in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}{set\+\_\+ip\+\_\+destination\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
+\begin{DoxyCompactList}\small\item\em Function for setting destination ip in UDP package. \end{DoxyCompactList}\item 
+uint16\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga82c7f136a32df0299f5e5563094fbc4a}{get\+\_\+size\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function give size data in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga5084a9ee28a51e81d4f1972b102a8883}{add\+\_\+date\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, void \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function addition data in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga6215aa14b1ee5e7d0e14a0939a27afa2}{set\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, void \texorpdfstring{$\ast$}{*}data, const uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Function overriding data in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga9f171c629d5f8a7ff24ccd920dd0bf69}{add\+\_\+byte\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Function addition byte in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaf49eea4ce97362fed222c0d35f4e80b6}{set\+\_\+input\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function read data from stdin in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga0e4c3a45b2cddd95cd6369ce1138eea1}{set\+\_\+file\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Function read data from file in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga6c39bc361feefc6b011fb569fa8d3b00}{set\+\_\+interface\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const interface)
+\begin{DoxyCompactList}\small\item\em Function for pick interface to send UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga4cb18d49955b5f28a3b5087c585ef31c}{send\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function to send UDP package. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function free UDP package. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Group function for work udp package. 
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{group__UdpPack_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}\index{work for udp@{work for udp}!udp\_pack\_t@{udp\_pack\_t}}
+\index{udp\_pack\_t@{udp\_pack\_t}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{udp\_pack\_t}{udp\_pack\_t}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025} 
+typedef struct \doxymbox{\hyperlink{structudp__pack}{udp\+\_\+pack}}\texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}
+
+
+
+UDP packet descriptor. 
+
+The primary type for working with the library. All functions accept this pointer as an argument. 
+
+\label{doc-func-members}
+\Hypertarget{group__UdpPack_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group__UdpPack_ga9f171c629d5f8a7ff24ccd920dd0bf69}\index{work for udp@{work for udp}!add\_byte\_udp\_pack@{add\_byte\_udp\_pack}}
+\index{add\_byte\_udp\_pack@{add\_byte\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{add\_byte\_udp\_pack()}{add\_byte\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga9f171c629d5f8a7ff24ccd920dd0bf69} 
+ssize\+\_\+t add\+\_\+byte\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const uint8\+\_\+t}]{byte}{}\end{DoxyParamCaption})}
+
+
+
+Function addition byte in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em byte} & Addition byte in UDP package. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{set\_date\_udp\_pack(pack,\ \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{set\_date\_udp\_pack(pack,\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga5084a9ee28a51e81d4f1972b102a8883}\index{work for udp@{work for udp}!add\_date\_udp\_pack@{add\_date\_udp\_pack}}
+\index{add\_date\_udp\_pack@{add\_date\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{add\_date\_udp\_pack()}{add\_date\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga5084a9ee28a51e81d4f1972b102a8883} 
+ssize\+\_\+t add\+\_\+date\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Function addition data in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em data} & Addition data in UDP package. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em size} & Size addition data for UDP package. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ message\ =\ \textcolor{stringliteral}{"{}Hello,\ world"{}};}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga5084a9ee28a51e81d4f1972b102a8883}{add\_date\_udp\_pack}}(pack,\ message,\ strlen(message));}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga43bd25d43834b433711fdf4b1ee6fd8e}\index{work for udp@{work for udp}!calculate\_checksum\_udp\_pack@{calculate\_checksum\_udp\_pack}}
+\index{calculate\_checksum\_udp\_pack@{calculate\_checksum\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{calculate\_checksum\_udp\_pack()}{calculate\_checksum\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga43bd25d43834b433711fdf4b1ee6fd8e} 
+void calculate\+\_\+checksum\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function calculate checksum for ip header and UDP package. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
+\end{DoxyNote}
+\Hypertarget{group__UdpPack_ga66ca52b0aa857eb5f90b5be48a251a73}\index{work for udp@{work for udp}!checksum\_compute@{checksum\_compute}}
+\index{checksum\_compute@{checksum\_compute}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{checksum\_compute()}{checksum\_compute()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga66ca52b0aa857eb5f90b5be48a251a73} 
+uint16\+\_\+t checksum\+\_\+compute (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sum}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function calculating from sum big endian to checksum big endian. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em sum} & Sum in big endian. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Checksum in big endian. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
+\end{DoxyNote}
+\Hypertarget{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}\index{work for udp@{work for udp}!destroy\_udp\_pack@{destroy\_udp\_pack}}
+\index{destroy\_udp\_pack@{destroy\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{destroy\_udp\_pack()}{destroy\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364} 
+void destroy\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+
+
+
+Function free UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. Usage example. 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ using\ udp\_pack\_t}}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__UdpPack_ga717eca5df0b8bed19c0872838f62ef94}\index{work for udp@{work for udp}!get\_pack\_udp\_pack@{get\_pack\_udp\_pack}}
+\index{get\_pack\_udp\_pack@{get\_pack\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{get\_pack\_udp\_pack()}{get\_pack\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga717eca5df0b8bed19c0872838f62ef94} 
+void \texorpdfstring{$\ast$}{*} get\+\_\+pack\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function raw get pointer on UDP package. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
+\end{DoxyNote}
+\Hypertarget{group__UdpPack_ga82c7f136a32df0299f5e5563094fbc4a}\index{work for udp@{work for udp}!get\_size\_data\_udp\_pack@{get\_size\_data\_udp\_pack}}
+\index{get\_size\_data\_udp\_pack@{get\_size\_data\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{get\_size\_data\_udp\_pack()}{get\_size\_data\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga82c7f136a32df0299f5e5563094fbc4a} 
+uint16\+\_\+t get\+\_\+size\+\_\+data\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+
+
+
+Function give size data in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size data in UDP package. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga82c7f136a32df0299f5e5563094fbc4a}{get\_size\_data\_udp\_pack}}(pack);}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_gaa2953647f643ce72255133a39adabe1f}\index{work for udp@{work for udp}!inet\_port@{inet\_port}}
+\index{inet\_port@{inet\_port}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{inet\_port()}{inet\_port()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gaa2953647f643ce72255133a39adabe1f} 
+uint16\+\_\+t inet\+\_\+port (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}const}]{port}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function support for parsing port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em port} & Port in string format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Port for big indian architect. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
+\end{DoxyNote}
+\Hypertarget{group__UdpPack_gac073209d13c5a0e425b547924759b90f}\index{work for udp@{work for udp}!init\_udp\_pack@{init\_udp\_pack}}
+\index{init\_udp\_pack@{init\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{init\_udp\_pack()}{init\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gac073209d13c5a0e425b547924759b90f} 
+\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} init\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Function for create object UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\+\_\+udp\+\_\+pack} after this. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+pointer or null on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ using\ udp\_pack\_t}}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga4cb18d49955b5f28a3b5087c585ef31c}\index{work for udp@{work for udp}!send\_udp\_pack@{send\_udp\_pack}}
+\index{send\_udp\_pack@{send\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{send\_udp\_pack()}{send\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga4cb18d49955b5f28a3b5087c585ef31c} 
+ssize\+\_\+t send\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+
+
+
+Function to send UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga4cb18d49955b5f28a3b5087c585ef31c}{send\_udp\_pack}}(pack);}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga6215aa14b1ee5e7d0e14a0939a27afa2}\index{work for udp@{work for udp}!set\_data\_udp\_pack@{set\_data\_udp\_pack}}
+\index{set\_data\_udp\_pack@{set\_data\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_data\_udp\_pack()}{set\_data\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga6215aa14b1ee5e7d0e14a0939a27afa2} 
+ssize\+\_\+t set\+\_\+data\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{const uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Function overriding data in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em data} & New data in UDP package. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em size} & Size new data for UDP package. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \textcolor{keyword}{const}\ message\ =\ \textcolor{stringliteral}{"{}Hello,\ world"{}};}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{set\_date\_udp\_pack(pack,\ message,\ strlen(message));}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga0e4c3a45b2cddd95cd6369ce1138eea1}\index{work for udp@{work for udp}!set\_file\_data\_udp\_pack@{set\_file\_data\_udp\_pack}}
+\index{set\_file\_data\_udp\_pack@{set\_file\_data\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_file\_data\_udp\_pack()}{set\_file\_data\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga0e4c3a45b2cddd95cd6369ce1138eea1} 
+ssize\+\_\+t set\+\_\+file\+\_\+data\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Function read data from file in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em file\+\_\+name} & File name for read in UDP pack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga0e4c3a45b2cddd95cd6369ce1138eea1}{set\_file\_data\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}Hello.txt"{}});}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_gaf49eea4ce97362fed222c0d35f4e80b6}\index{work for udp@{work for udp}!set\_input\_data\_udp\_pack@{set\_input\_data\_udp\_pack}}
+\index{set\_input\_data\_udp\_pack@{set\_input\_data\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_input\_data\_udp\_pack()}{set\_input\_data\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gaf49eea4ce97362fed222c0d35f4e80b6} 
+ssize\+\_\+t set\+\_\+input\+\_\+data\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+
+
+
+Function read data from stdin in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gaf49eea4ce97362fed222c0d35f4e80b6}{set\_input\_data\_udp\_pack}}(pack);}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga6c39bc361feefc6b011fb569fa8d3b00}\index{work for udp@{work for udp}!set\_interface\_udp\_pack@{set\_interface\_udp\_pack}}
+\index{set\_interface\_udp\_pack@{set\_interface\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_interface\_udp\_pack()}{set\_interface\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga6c39bc361feefc6b011fb569fa8d3b00} 
+ssize\+\_\+t set\+\_\+interface\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{interface}{}\end{DoxyParamCaption})}
+
+
+
+Function for pick interface to send UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em interface} & Interface to send UDP pack. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6c39bc361feefc6b011fb569fa8d3b00}{set\_interface\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}lo"{}});}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}\index{work for udp@{work for udp}!set\_ip\_destination\_udp\_pack@{set\_ip\_destination\_udp\_pack}}
+\index{set\_ip\_destination\_udp\_pack@{set\_ip\_destination\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_ip\_destination\_udp\_pack()}{set\_ip\_destination\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga2452742a3a258720842daa8cf8410a65} 
+ssize\+\_\+t set\+\_\+ip\+\_\+destination\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{ip}{}\end{DoxyParamCaption})}
+
+
+
+Function for setting destination ip in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em ip} & Destination ip to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}{set\_ip\_destination\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}\index{work for udp@{work for udp}!set\_ip\_source\_udp\_pack@{set\_ip\_source\_udp\_pack}}
+\index{set\_ip\_source\_udp\_pack@{set\_ip\_source\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_ip\_source\_udp\_pack()}{set\_ip\_source\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9} 
+ssize\+\_\+t set\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{ip}{}\end{DoxyParamCaption})}
+
+
+
+Function for setting source ip in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em ip} & Source ip to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\_ip\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}\index{work for udp@{work for udp}!set\_port\_destination\_udp\_pack@{set\_port\_destination\_udp\_pack}}
+\index{set\_port\_destination\_udp\_pack@{set\_port\_destination\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_port\_destination\_udp\_pack()}{set\_port\_destination\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2} 
+ssize\+\_\+t set\+\_\+port\+\_\+destination\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Function for setting destination port in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em port} & Destination port to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}{set\_port\_destination\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}8003"{}});}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_gaf1e2ebce0c63dad760436f66b5cca525}\index{work for udp@{work for udp}!set\_port\_source\_udp\_pack@{set\_port\_source\_udp\_pack}}
+\index{set\_port\_source\_udp\_pack@{set\_port\_source\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_port\_source\_udp\_pack()}{set\_port\_source\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gaf1e2ebce0c63dad760436f66b5cca525} 
+ssize\+\_\+t set\+\_\+port\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Function for setting source port in UDP package. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em port} & Source port to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gaf1e2ebce0c63dad760436f66b5cca525}{set\_port\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}8001"{}});}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga971cf1276d8804cc735075ee12142911}\index{work for udp@{work for udp}!set\_size\_udp\_pack@{set\_size\_udp\_pack}}
+\index{set\_size\_udp\_pack@{set\_size\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_size\_udp\_pack()}{set\_size\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga971cf1276d8804cc735075ee12142911} 
+void set\+\_\+size\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const uint16\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function raw write size UDP package. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em size} & New size UDP package. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
+\end{DoxyNote}
+\Hypertarget{group__UdpPack_ga26e66504e0ce6f97f3345b70f4104729}\index{work for udp@{work for udp}!sum\_compute@{sum\_compute}}
+\index{sum\_compute@{sum\_compute}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{sum\_compute()}{sum\_compute()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga26e66504e0ce6f97f3345b70f4104729} 
+uint32\+\_\+t sum\+\_\+compute (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ptr}{, }\item[{uint16\+\_\+t}]{nbytes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function calculate sum in big endian. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em ptr} & Buffer for calculating sum in big endian. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em nbytes} & Size buffer for calculating sum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum buffer in big endian. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
+\end{DoxyNote}
