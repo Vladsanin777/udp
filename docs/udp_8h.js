@@ -4,6 +4,14 @@ var udp_8h =
     [ "add_byte_udp_pack", "group__UdpPack.html#ga9f171c629d5f8a7ff24ccd920dd0bf69", null ],
     [ "add_date_udp_pack", "group__UdpPack.html#ga5084a9ee28a51e81d4f1972b102a8883", null ],
     [ "destroy_udp_pack", "group__UdpPack.html#gae2b2cb87ed580f5384fce15a6599f364", null ],
+    [ "get_data_hex_udp_pack", "group__UdpPack.html#ga41d3c898afbfea462344aa3615b28c1c", null ],
+    [ "get_data_udp_pack", "group__UdpPack.html#ga8318b775cb92c3fc4629b6e6e395cc4b", null ],
+    [ "get_interface_udp_pack", "group__UdpPack.html#gad6b4c7e549d5e18d03a0b2390e91f9fe", null ],
+    [ "get_ip_destantion_udp_pack", "group__UdpPack.html#gadd7acf376c3464f521e41433110a3e1d", null ],
+    [ "get_ip_source_udp_pack", "group__UdpPack.html#gaef27cc59b3f78a734663b6ac6fdfe944", null ],
+    [ "get_mac_address_udp_pack", "group__UdpPack.html#ga847efb6b1f33aaa86317c098f4e18dc0", null ],
+    [ "get_port_destantion_udp_pack", "group__UdpPack.html#ga85eee6188e607d0ee01af4ce1045e1f2", null ],
+    [ "get_port_source_udp_pack", "group__UdpPack.html#ga629ad0b2e51e286471cb9fd9fbbb215f", null ],
     [ "get_size_data_udp_pack", "group__UdpPack.html#ga82c7f136a32df0299f5e5563094fbc4a", null ],
     [ "init_udp_pack", "group__UdpPack.html#gac073209d13c5a0e425b547924759b90f", null ],
     [ "send_udp_pack", "group__UdpPack.html#ga4cb18d49955b5f28a3b5087c585ef31c", null ],
@@ -13,6 +21,7 @@ var udp_8h =
     [ "set_interface_udp_pack", "group__UdpPack.html#ga6c39bc361feefc6b011fb569fa8d3b00", null ],
     [ "set_ip_destination_udp_pack", "group__UdpPack.html#ga2452742a3a258720842daa8cf8410a65", null ],
     [ "set_ip_source_udp_pack", "group__UdpPack.html#ga4dc882bdd284e70263b012928d64e1d9", null ],
+    [ "set_mac_address_udp_pack", "group__UdpPack.html#ga90a88e1fe527abd166f422638403200f", null ],
     [ "set_port_destination_udp_pack", "group__UdpPack.html#gac6884f2bace0913cd408db9a3f8fe2d2", null ],
     [ "set_port_source_udp_pack", "group__UdpPack.html#gaf1e2ebce0c63dad760436f66b5cca525", null ]
 ];
