@@ -12,6 +12,6 @@ all: $(TARGETS)
 clean:
 	rm -f $(TARGETS) $(OBJS)
 
-default: clean all
+default: all
 
 .PHONY: clean all

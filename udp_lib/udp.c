@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
+#include <stddef.h>
 
 #include <net/if.h>
 
@@ -37,7 +38,7 @@
  */
 struct PACKED udp_head {
     uint16_t m_port_source; /**< Port source */
-    uint16_t m_port_destination; /**< Port destination */
+    uint16_t m_port_destantion; /**< Port destantion */
     uint16_t m_length; /**< Length udp pack */
     uint16_t m_checksum; /**< Calculated software checksum */
 };
@@ -54,7 +55,7 @@ struct PACKED udp_head {
 
 #define NULL_CHECKSUM 0x0000
 
-#define MIN(left, rigth) (((left) < (rigth)) ? (left) : (rigth))
+#define MIN(left, rigth) (((left) < ((typeof(left))rigth)) ? (left) : ((typeof(left))rigth))
 
 /**
  * @ingroup UdpPack
@@ -87,7 +88,7 @@ udp_pack_t init_udp_pack(void) {
     pack->m_iphdr.ttl = 64;
 
     pack->m_head.m_port_source = htons(0x0000);
-    pack->m_head.m_port_destination = htons(0x0000);
+    pack->m_head.m_port_destantion = htons(0x0000);
     pack->m_head.m_length = htons(HEAD_UDP);
     pack->m_head.m_checksum = htons(NULL_CHECKSUM);
     return pack;
@@ -122,7 +123,7 @@ error_in_atoi:
 ssize_t set_port_source_udp_pack(udp_pack_t pack, const char * const port) {
     ssize_t ret = 0;
     uint16_t hport = inet_port(port);
-    if (hport == -1) {
+    if (hport == (uint16_t)-1) {
         ret = -1;
         goto error_in_inet_port;
     }
@@ -133,21 +134,21 @@ error_in_inet_port:
     return ret;
 }
 
-ssize_t set_port_destination_udp_pack(udp_pack_t pack, const char * const port) {
+ssize_t set_port_destantion_udp_pack(udp_pack_t pack, const char * const port) {
     ssize_t ret = 0;
     uint16_t hport = inet_port(port);
-    if (hport == -1) {
+    if (hport == (uint16_t)-1) {
         ret = -1;
         goto error_in_inet_port;
     }
-    pack->m_head.m_port_destination = hport;
+    pack->m_head.m_port_destantion = hport;
 
     return ret;
 error_in_inet_port:
     return ret;
 }
 
-ssize_t set_ip_source_udp_pack(udp_pack_t pack, const char * const ip) {
+ssize_t set_ip_address_source_udp_pack(udp_pack_t pack, const char * const ip) {
     ssize_t ret = 0;
 
     pack->m_iphdr.saddr = inet_addr(ip);
@@ -160,7 +161,7 @@ error_in_inet_addr:
     return ret;
 }
 
-ssize_t set_ip_destination_udp_pack(udp_pack_t pack, const char * const ip) {
+ssize_t set_ip_address_destantion_udp_pack(udp_pack_t pack, const char * const ip) {
     ssize_t ret = 0;
     pack->m_iphdr.daddr = inet_addr(ip);
     if (pack->m_iphdr.daddr == (in_addr_t)-1) {
@@ -192,6 +193,8 @@ uint16_t get_size_data_udp_pack(udp_pack_t pack) {
 
 ssize_t add_date_udp_pack(udp_pack_t pack, void * data, \
         const uint16_t size) {
+    int ret = 0;
+    void * ptr = NULL;
     uint16_t size_copy = size;
     uint16_t old_size = get_size_data_udp_pack(pack);
     uint16_t new_raw_size = old_size + size;
@@ -199,14 +202,30 @@ ssize_t add_date_udp_pack(udp_pack_t pack, void * data, \
     uint16_t overflow_size = new_raw_size - new_size;
     if (new_size == MAX_SIZE_DATA)
         size_copy -= overflow_size;
-    memcpy(pack->m_data + old_size, data, size_copy);
+    ptr = memcpy(pack->m_data + old_size, data, size_copy);
+    if (ptr == NULL) {
+        ret = -1;
+        goto add_not_data_udp_pack;
+    }
     set_size_udp_pack(pack, new_size);
+    return ret;
+add_not_data_udp_pack:
+    return ret;
 }
 
 ssize_t set_data_udp_pack(udp_pack_t pack, void * data, uint16_t size) {
+    ssize_t ret = 0;
+    void * ptr = NULL;
     size = MIN(size, MAX_SIZE_DATA);
-    memcpy(pack->m_data, data, size);
+    ptr = memcpy(pack->m_data, data, size);
+    if (ptr == NULL) {
+        ret = -1;
+        goto set_not_data_udp_pack;
+    }
     set_size_udp_pack(pack, size);
+    return ret;
+set_not_data_udp_pack:
+    return ret;
 }
 
 ssize_t add_byte_udp_pack(udp_pack_t pack, uint8_t byte) {
@@ -423,6 +442,75 @@ ssize_t send_udp_pack(udp_pack_t pack) {
     return ret;
 give_not_fd_socket:
 give_not_siocgifindex:
+    return ret;
+}
+
+/* TODO */
+static void * inet_mac(const char * const mac_address) {
+    ssize_t ret = 0;
+    uint8_t * mac_buffer = NULL;
+    mac_buffer = (uint8_t *)calloc((size_t)sizeof(*mac_buffer), (size_t)6);
+    if (mac_buffer == NULL)
+        goto get_not_buffer;
+    ret = sscanf(mac_address, "%hhx:%hhx:%hhx:%hhx:%hhx:%hhx", \
+            mac_buffer, mac_buffer + 1, mac_buffer + 2, \
+            mac_buffer + 3, mac_buffer + 4, mac_buffer + 5);
+    if (ret != 6)
+        goto parce_not_mac_address;
+
+    return (void *)mac_buffer;
+parce_not_mac_address:
+    free(mac_buffer);
+    mac_buffer = NULL;
+get_not_buffer:
+    return (void *)mac_buffer;
+}
+
+ssize_t set_mac_address_source_udp_pack( \
+        udp_pack_t pack, const char * const mac_address) {
+    ssize_t ret = 0;
+    void * ptr = NULL;
+    void * mac = NULL;
+    ptr = inet_mac(mac_address);
+    if (ptr == NULL) {
+        ret = -1;
+        goto get_not_mac_address;
+    }
+    mac = ptr;
+    ptr = memcpy(&pack->m_ethhdr.h_source, mac, ETH_ALEN);
+    if (ptr == NULL) {
+        ret = -1;
+        goto write_not_mac_address;
+    }
+    free(mac);
+    return ret;
+write_not_mac_address:
+    free(mac);
+get_not_mac_address:
+    return ret;
+}
+
+ssize_t set_mac_address_destantion_udp_pack( \
+        udp_pack_t pack, const char * const mac_address) {
+    ssize_t ret = 0;
+    void * ptr = NULL;
+    void * mac = NULL;
+    ptr = inet_mac(mac_address);
+    if (ptr == NULL) {
+        ret = -1;
+        goto get_not_mac_address;
+    }
+    mac = ptr;
+    ptr = memcpy(&pack->m_ethhdr.h_dest, mac, ETH_ALEN);
+    if (ptr == NULL) {
+        ret = -1;
+        goto write_not_mac_address;
+    }
+    free(mac);
+    return ret;
+write_not_mac_address:
+    free(mac);
+get_not_mac_address:
     return ret;
 }
 
