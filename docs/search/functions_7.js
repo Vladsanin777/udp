@@ -12,6 +12,5 @@ var searchData=
   ['set_5fport_5fdestantion_5fudp_5fpack_9',['set_port_destantion_udp_pack',['../group__UdpPack.html#ga34e91a82fe5ba0ff36b8b7a4162d2219',1,'set_port_destantion_udp_pack(udp_pack_t pack, const char *const port):&#160;udp.c'],['../group__UdpPack.html#ga34e91a82fe5ba0ff36b8b7a4162d2219',1,'set_port_destantion_udp_pack(udp_pack_t pack, const char *const port):&#160;udp.c']]],
   ['set_5fport_5fsource_5fudp_5fpack_10',['set_port_source_udp_pack',['../group__UdpPack.html#gaf1e2ebce0c63dad760436f66b5cca525',1,'set_port_source_udp_pack(udp_pack_t pack, const char *const port):&#160;udp.c'],['../group__UdpPack.html#gaf1e2ebce0c63dad760436f66b5cca525',1,'set_port_source_udp_pack(udp_pack_t pack, const char *const port):&#160;udp.c']]],
   ['set_5fsize_5fudp_5fpack_11',['set_size_udp_pack',['../group__UdpPack.html#ga971cf1276d8804cc735075ee12142911',1,'udp.c']]],
-  ['source_5faddress_12',['source_address',['../structpseudo__header.html#a6839aedefba7b66ad4e3818e9ec84e3b',1,'pseudo_header']]],
-  ['sum_5fcompute_13',['sum_compute',['../group__UdpPack.html#ga26e66504e0ce6f97f3345b70f4104729',1,'udp.c']]]
+  ['sum_5fcompute_12',['sum_compute',['../group__UdpPack.html#ga26e66504e0ce6f97f3345b70f4104729',1,'udp.c']]]
 ];

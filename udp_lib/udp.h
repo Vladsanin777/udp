@@ -66,7 +66,7 @@ udp_pack_t init_udp_pack(void);
 ssize_t set_port_source_udp_pack(udp_pack_t pack, const char * const port);
 
 /**
- * @brief Function for setting destination port in UDP package.
+ * @brief Function for setting destantion port in UDP package.
  * @note You must call @ref init_udp_pack before this.
  * @param[in,out] pack UDP package for work.
  * @param[in] port Destination port to send.
@@ -79,15 +79,15 @@ ssize_t set_port_source_udp_pack(udp_pack_t pack, const char * const port);
  *     ret = -1;
  *     goto get_not_udp_pack;
  * }
- * set_port_destination_udp_pack(pack, "8003");
+ * set_port_destantion_udp_pack(pack, "8003");
  * get_not_udp_pack:
  * destroy_udp_pack(pack);
  * @endcode
  */
-ssize_t set_port_destination_udp_pack(udp_pack_t pack, const char * const port);
+ssize_t set_port_destantion_udp_pack(udp_pack_t pack, const char * const port);
 
 /**
- * @brief Function for setting source ip in UDP package.
+ * @brief Function for setting source ip address in UDP package.
  * @note You must call @ref init_udp_pack before this.
  * @param[in,out] pack UDP package for work.
  * @param[in] ip Source ip to send.
@@ -100,18 +100,23 @@ ssize_t set_port_destination_udp_pack(udp_pack_t pack, const char * const port);
  *     ret = -1;
  *     goto get_not_udp_pack;
  * }
- * set_ip_source_udp_pack(pack, "127.0.0.1");
+ * ret = set_ip_address_source_udp_pack(pack, "127.0.0.1");
+ * if (ret == -1)
+ *     goto set_not_ip_address;
+ * // other code whit udp_pack_t
+ * set_not_ip_address:
  * get_not_udp_pack:
  * destroy_udp_pack(pack);
  * @endcode
  */
-ssize_t set_ip_source_udp_pack(udp_pack_t pack, const char * const ip);
+ssize_t set_ip_address_source_udp_pack( \
+        udp_pack_t pack, const char * const ip);
 
 /**
- * @brief Function for setting destination ip in UDP package.
+ * @brief Function for setting destantion ip address in UDP package.
  * @note You must call @ref init_udp_pack before this.
  * @param[in,out] pack UDP package for work.
- * @param[in] ip Destination ip to send.
+ * @param[in] ip Destination ip address to send.
  * @return 0 or -1 on error.
  * Usage example.
  * @code
@@ -121,12 +126,17 @@ ssize_t set_ip_source_udp_pack(udp_pack_t pack, const char * const ip);
  *     ret = -1;
  *     goto get_not_udp_pack;
  * }
- * set_ip_destination_udp_pack(pack, "127.0.0.1");
+ * ret = set_ip_address_destantion_udp_pack(pack, "127.0.0.1");
+ * if (ret == -1)
+ *     goto setting_not_ip_address;
+ * // other code whit udp_pack_t
+ * setting_not_ip_address:
  * get_not_udp_pack:
  * destroy_udp_pack(pack);
  * @endcode
  */
-ssize_t set_ip_destination_udp_pack(udp_pack_t pack, const char * const ip);
+ssize_t set_ip_address_destantion_udp_pack( \
+        udp_pack_t pack, const char * const ip);
 
 /**
  * @brief Function give size data in UDP package.
@@ -301,6 +311,388 @@ ssize_t set_interface_udp_pack( \
  * @endcode
  */
 ssize_t send_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function getting mac address for source.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_mac_address_source_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return String or NULL pointer is fail.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_mac_address_source_udp_pack(pack, "ff:ff:ff:ff:ff:ff");
+ * if (ret == -1)
+ *     goto setting_not_mac_address;
+ * {
+ *     char * mac_address =  NULL;
+ *     mac_address = get_mac_address_source_udp_pack(pack);
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * setting_not_mac_address:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_mac_address_source_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function setting mac address for destantion.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_mac_address_destantion_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return String or NULL pointer is fail.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_mac_address_destantion_udp_pack(pack, "ff:ff:ff:ff:ff:ff");
+ * if (ret == -1)
+ *     goto setting_not_mac_address;
+ * {
+ *     char * mac_address = NULL;
+ *     mac_address = get_mac_address_destantion_udp_pack(udp_pack pack);
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * setting_not_mac_address:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_mac_address_destantion_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function setting mac address for source.
+ * @note You must call @ref init_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @param[in] mac_address String is mac address source.
+ * @return 0 or -1 on error.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_mac_address_source_udp_pack(pack, "ff:ff:ff:ff:ff:ff");
+ * if (ret == -1)
+ *     goto setting_not_mac_address;
+ * // other code whit udp_pack_t
+ * setting_not_mac_address:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+ssize_t set_mac_address_source_udp_pack(udp_pack_t pack, \
+        const char * const mac_address);
+
+/**
+ * @brief Function setting mac address for destantion.
+ * @note You must call @ref init_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @param[in] mac_address String is mac address destantion.
+ * @return 0 or -1 on error.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_mac_address_destantion_udp_pack(pack, "ff:ff:ff:ff:ff:ff");
+ * if (ret == -1)
+ *     goto setting_not_mac_address;
+ * // other code whit udp_pack_t
+ * setting_not_mac_address:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+ssize_t set_mac_address_destantion_udp_pack(udp_pack_t pack, \
+        const char * const mac_address);
+
+/**
+ * @brief Function for getting interface.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_interface_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return String or NULL pointer is fail.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_interface_udp_pack(pack, "lo");
+ * if (ret == -1)
+ *     goto setting_not_interface;
+ * {
+ *     char * interface = NULL;
+ *     interface = get_interface_udp_pack(pack);
+ *     if (interface == NULL)
+ *         getting_not_interface;
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * getting_not_interface:
+ * setting_not_interface:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_interface_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function for getting port source.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_port_source_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return String or NULL pointer is fail.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_port_source_udp_pack(pack, "8003");
+ * if (ret == -1)
+ *     goto setting_not_port_source;
+ * {
+ *     char * port_source = NULL;
+ *     port_source = get_port_source_udp_pack(pack);
+ *     if (port_source == NULL)
+ *         getting_not_port_source;
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * getting_not_port_source:
+ * setting_not_port_source:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_port_source_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function for getting port destantion.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_port_destantion_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return String or NULL pointer is fail.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_port_destantion_udp_pack(pack, "8001");
+ * if (ret == -1)
+ *     goto setting_not_port_destantion;
+ * {
+ *     char * port_destantion = NULL;
+ *     port_destantion = get_port_destantion_udp_pack(pack);
+ *     if (port_destantion == NULL)
+ *         getting_not_port_destantion;
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * getting_not_port_destantion:
+ * setting_not_port_destantion:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_port_destantion_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function for getting ip address source.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_ip_address_source_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return String or NULL pointer is fail.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_ip_address_source_udp_pack(pack, "127.0.0.1");
+ * if (ret == -1)
+ *     goto setting_not_ip_address;
+ * {
+ *     char * ip_address = NULL;
+ *     ip_address = get_ip_address_source_udp_pack(pack);
+ *     if (ip_source == NULL)
+ *         getting_not_ip_address;
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * getting_not_ip_address:
+ * setting_not_ip_address:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_ip_address_source_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function for getting ip address destantion.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_ip_address_destantion_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return String or NULL pointer is fail.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = set_ip_address_source_udp_pack(pack, "127.0.0.1");
+ * if (ret == -1)
+ *     goto setting_not_ip_destantion;
+ * {
+ *     char * ip_address = NULL;
+ *     ip_address = get_ip_destantion_udp_pack(pack);
+ *     if (ip_address == NULL)
+ *         getting_not_ip_address;
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * getting_not_ip_address:
+ * setting_not_ip_address:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_ip_address_destantion_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function for getting size data.
+ * @note You must call @ref init_udp_pack before this.
+ * @note You can call @ref set_data_udp_pack before this.
+ * @note You can call @ref add_data_udp_pack before this.
+ * @note You can call @ref add_symbol_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return Length data in UDP package.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * {
+ *     uint16_t size_data = get_size_data_udp_pack(pack);
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * getting_not_size_data:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+uint16_t get_size_data_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function for getting data.
+ * @note You must call @ref init_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return Data in UDP package.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * {
+ *     void * data = get_data_udp_pack(pack);
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_data_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function for getting data hex.
+ * @note You must call @ref init_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return Data hex in UDP package or NULL pointer on error.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * {
+ *     char * data = get_data_hex_udp_pack(pack);
+ *     if (data == NULL) {
+ *         ret = -1;
+ *         goto get_not_data_hex_udp_pack;
+ *     }
+ *     // other code whit udp_pack_t
+ * }
+ * // other code whit udp_pack_t
+ * get_not_data_hex_udp_pack:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+char * get_data_hex_udp_pack(udp_pack_t pack);
+
+/**
+ * @brief Function print all info about udp pack.
+ * @note You must call @ref init_udp_pack before this.
+ * @param[in,out] pack UDP package for work.
+ * @return 0 or -1 on error.
+ * Usage example.
+ * @code
+ * ssize_t ret = 0;
+ * udp_pack_t pack = init_udp_pack();
+ * if (pack == NULL) {
+ *     ret = -1;
+ *     goto get_not_udp_pack;
+ * }
+ * ret = print_udp_pack(pack);
+ * if (ret)
+ *     goto print_not_udp_pack;
+ * // other code whit udp_pack_t
+ * print_not_udp_pack:
+ * get_not_udp_pack:
+ * destroy_udp_pack(pack);
+ * @endcode
+ */
+ssize_t print_udp_pack(udp_pack_t pack);
 
 /**
  * @brief Function free UDP package.
