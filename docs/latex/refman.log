@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2026.2.11)  13 FEB 2026 01:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2026.2.11)  14 FEB 2026 00:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -805,6 +805,10 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 201.
  (./refman.aux
 
+LaTeX Warning: Label `group__UdpPack_ga0d38284fa20d6a5468680588f26778c8' multip
+ly defined.
+
+
 LaTeX Warning: Label `doc-variable-members' multiply defined.
 
 
@@ -812,6 +816,9 @@ LaTeX Warning: Label `doc-variable-members' multiply defined.
 
 
 LaTeX Warning: Label `doc-func-members' multiply defined.
+
+
+LaTeX Warning: Label `doc-define-members' multiply defined.
 
 )
 \openout1 = `refman.aux'.
@@ -1036,23 +1043,23 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 
 
 [11]
+
+[12]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 85.
+(Font)              scaled to size 10.79993pt on input line 103.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 96.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 96
-.
+(Font)              scaled to size 7.19995pt on input line 114.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
+4.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-
-[12]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 112.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 141.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 118.
+(Font)              scaled to size 8.99994pt on input line 147.
 
-Underfull \hbox (badness 10000) detected at line 118
+Underfull \hbox (badness 10000) detected at line 147
 [][][]
  []
 
@@ -1064,35 +1071,9 @@ Underfull \hbox (badness 10000) detected at line 118
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 127.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 156.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 127.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
-Underfull \hbox (badness 10000) detected at line 128
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 155
-[][][]
- []
-
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
+(Font)              scaled to size 8.99994pt on input line 156.
 > Step: build the whole table.
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1105,7 +1086,12 @@ Underfull \hbox (badness 10000) detected at line 155
 
 
 [13]
-Underfull \hbox (badness 10000) detected at line 167
+Underfull \hbox (badness 10000) detected at line 157
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 184
 [][][]
  []
 
@@ -1126,7 +1112,7 @@ Underfull \hbox (badness 10000) detected at line 167
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 199
+Underfull \hbox (badness 10000) detected at line 196
 [][][]
  []
 
@@ -1146,20 +1132,10 @@ Underfull \hbox (badness 10000) detected at line 199
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-
-Underfull \hbox (badness 10000) detected at line 217
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 220
-[][][]
- []
-
 
 
 [14]
-Underfull \hbox (badness 10000) detected at line 233
+Underfull \hbox (badness 10000) detected at line 228
 [][][]
  []
 
@@ -1180,7 +1156,17 @@ Underfull \hbox (badness 10000) detected at line 233
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 264
+Underfull \hbox (badness 10000) detected at line 246
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 249
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 262
 [][][]
  []
 
@@ -1200,15 +1186,10 @@ Underfull \hbox (badness 10000) detected at line 264
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-
-Underfull \hbox (badness 10000) detected at line 272
-[][][]
- []
-
 
 
 [15]
-Underfull \hbox (badness 10000) detected at line 302
+Underfull \hbox (badness 10000) detected at line 293
 [][][]
  []
 
@@ -1229,12 +1210,12 @@ Underfull \hbox (badness 10000) detected at line 302
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 310
+Underfull \hbox (badness 10000) detected at line 301
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 340
+Underfull \hbox (badness 10000) detected at line 336
 [][][]
  []
 
@@ -1255,14 +1236,14 @@ Underfull \hbox (badness 10000) detected at line 340
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 350
+Underfull \hbox (badness 10000) detected at line 344
 [][][]
  []
 
 
 
 [16]
-Underfull \hbox (badness 10000) detected at line 388
+Underfull \hbox (badness 10000) detected at line 374
 [][][]
  []
 
@@ -1283,14 +1264,40 @@ Underfull \hbox (badness 10000) detected at line 388
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 398
+Underfull \hbox (badness 10000) detected at line 384
 [][][]
  []
 
+
+Underfull \hbox (badness 10000) detected at line 422
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 
 
 [17]
-Underfull \hbox (badness 10000) detected at line 436
+Underfull \hbox (badness 10000) detected at line 432
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 470
 [][][]
  []
 
@@ -1311,62 +1318,14 @@ Underfull \hbox (badness 10000) detected at line 436
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 446
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 484
-[][][]
- []
-
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
-Underfull \hbox (badness 10000) detected at line 494
+Underfull \hbox (badness 10000) detected at line 480
 [][][]
  []
 
 
 
 [18]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
-Underfull \hbox (badness 10000) detected at line 537
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 550
+Underfull \hbox (badness 10000) detected at line 518
 [][][]
  []
 
@@ -1387,14 +1346,14 @@ Underfull \hbox (badness 10000) detected at line 550
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 560
+Underfull \hbox (badness 10000) detected at line 528
 [][][]
  []
 
 
 
 [19]
-Underfull \hbox (badness 10000) detected at line 598
+Underfull \hbox (badness 10000) detected at line 563
 [][][]
  []
 
@@ -1415,14 +1374,40 @@ Underfull \hbox (badness 10000) detected at line 598
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 608
+Underfull \hbox (badness 10000) detected at line 573
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 613
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 616
 [][][]
  []
 
 
 
 [20]
-Underfull \hbox (badness 10000) detected at line 648
+Underfull \hbox (badness 10000) detected at line 629
 [][][]
  []
 
@@ -1443,12 +1428,12 @@ Underfull \hbox (badness 10000) detected at line 648
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 656
+Underfull \hbox (badness 10000) detected at line 639
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 672
+Underfull \hbox (badness 10000) detected at line 677
 [][][]
  []
 
@@ -1469,36 +1454,14 @@ Underfull \hbox (badness 10000) detected at line 672
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 686
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 709
+Underfull \hbox (badness 10000) detected at line 687
 [][][]
  []
 
 
 
 [21]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
-Underfull \hbox (badness 10000) detected at line 723
+Underfull \hbox (badness 10000) detected at line 727
 [][][]
  []
 
@@ -1519,29 +1482,40 @@ Underfull \hbox (badness 10000) detected at line 723
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 759
+Underfull \hbox (badness 10000) detected at line 735
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 762
+Underfull \hbox (badness 10000) detected at line 751
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 775
-[][][]
- []
-
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 
 
 [22]
-Underfull \hbox (badness 10000) detected at line 778
+Underfull \hbox (badness 10000) detected at line 765
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 804
+Underfull \hbox (badness 10000) detected at line 788
 [][][]
  []
 
@@ -1562,70 +1536,106 @@ Underfull \hbox (badness 10000) detected at line 804
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 812
+Underfull \hbox (badness 10000) detected at line 802
 [][][]
  []
 
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 827.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 
 Underfull \hbox (badness 10000) detected at line 838
 [][][]
  []
 
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
 
 
 [23]
+Underfull \hbox (badness 10000) detected at line 841
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 859
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 862
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 875
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 878
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 904
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
 
 [24]
-Underfull \hbox (badness 10000) detected at line 850
-[][][]
- []
-
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 871.
-
-Underfull \hbox (badness 10000) detected at line 877
-[][][]
- []
-
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
-Underfull \hbox (badness 10000) detected at line 887
+Underfull \hbox (badness 10000) detected at line 912
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 913
+Underfull \hbox (badness 10000) detected at line 942
 [][][]
  []
 
@@ -1645,15 +1655,15 @@ Underfull \hbox (badness 10000) detected at line 913
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 950
+[][][]
+ []
+
 
 
 [25]
-Underfull \hbox (badness 10000) detected at line 921
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 947
+Underfull \hbox (badness 10000) detected at line 976
 [][][]
  []
 
@@ -1674,12 +1684,12 @@ Underfull \hbox (badness 10000) detected at line 947
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 957
+Underfull \hbox (badness 10000) detected at line 988
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 983
+Underfull \hbox (badness 10000) detected at line 1015
 [][][]
  []
 
@@ -1699,17 +1709,15 @@ Underfull \hbox (badness 10000) detected at line 983
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 1025
+[][][]
+ []
+
 
 
 [26]
-
-[27]
-Underfull \hbox (badness 10000) detected at line 993
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 1019
+Underfull \hbox (badness 10000) detected at line 1051
 [][][]
  []
 
@@ -1730,12 +1738,12 @@ Underfull \hbox (badness 10000) detected at line 1019
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 1029
+Underfull \hbox (badness 10000) detected at line 1059
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1055
+Underfull \hbox (badness 10000) detected at line 1085
 [][][]
  []
 
@@ -1755,18 +1763,18 @@ Underfull \hbox (badness 10000) detected at line 1055
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-
-
-[28]
-Underfull \hbox (badness 10000) detected at line 1065
-[][][]
- []
-
 
 Underfull \hbox (badness 10000) detected at line 1095
 [][][]
  []
 
+
+
+[27]
+Underfull \hbox (badness 10000) detected at line 1121
+[][][]
+ []
+
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1784,12 +1792,66 @@ Underfull \hbox (badness 10000) detected at line 1095
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 1105
+Underfull \hbox (badness 10000) detected at line 1131
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1131
+Underfull \hbox (badness 10000) detected at line 1161
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 1171
+[][][]
+ []
+
+
+
+[28]
+Underfull \hbox (badness 10000) detected at line 1201
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 1211
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1241
 [][][]
  []
 
@@ -1812,7 +1874,12 @@ Underfull \hbox (badness 10000) detected at line 1131
 
 
 [29]
-Underfull \hbox (badness 10000) detected at line 1141
+Underfull \hbox (badness 10000) detected at line 1251
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1281
 [][][]
  []
 
@@ -1833,7 +1900,12 @@ Underfull \hbox (badness 10000) detected at line 1141
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 1174
+Underfull \hbox (badness 10000) detected at line 1291
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1317
 [][][]
  []
 
@@ -1854,26 +1926,80 @@ Underfull \hbox (badness 10000) detected at line 1174
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) detected at line 1194
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 1197
-[][][]
- []
-
-)
 
 [30]
+Underfull \hbox (badness 10000) detected at line 1327
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 1360
+[][][]
+ []
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+Underfull \hbox (badness 10000) detected at line 1380
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1383
+[][][]
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{group__UdpPac
+k_ga0d38284fa20d6a5468680588f26778c8}) has been already used, duplicate ignored
+
+<to be read again> 
+                   \relax 
+l.1391 ...Pack_ga0d38284fa20d6a5468680588f26778c8}
+                                                  \index{work for udp@{work ...
+)
+
+[31]
+
+[32]
 Chapter 7.
 (./dir_c4ed44889d0fc34170a75974458b0cf6.tex)
 
-[31
+[33
 
 ]
 
-[32
+[34
 
 ]
 Chapter 8.
@@ -1884,23 +2010,23 @@ Underfull \hbox (badness 10000) detected at line 26
 
 
 
-[33]) (./structudp__head.tex
+[35]) (./structudp__head.tex
 Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
 
 
-[34]) (./structudp__pack.tex
+[36]) (./structudp__pack.tex
 Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
 
 
 
-[35])
+[37])
 
-[36]
+[38]
 Chapter 9.
 (./main_8c.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--7
@@ -1908,55 +2034,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--7
  []
 
 ) (./README_8md.tex) (./udp_8c.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--24
+Underfull \hbox (badness 10000) in paragraph at lines 8--25
 
  []
 
 
 
-[37
+[39
 
 ]
 
-[38]
-Underfull \hbox (badness 10000) detected at line 102
+[40]
+
+[41]
+Underfull \hbox (badness 10000) detected at line 132
 [][][]
  []
 
-
-
-[39]) (./udp_8h.tex
+) (./udp_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
 
 
-[40]
+[42]
 
-[41]
-Underfull \hbox (badness 10000) detected at line 69
+[43]
+Underfull \hbox (badness 10000) detected at line 75
 [][][]
  []
 
-) (./udp_8h_source.tex)
+) (./udp_8h_source.tex
 
-[42] (./refman.ind
+[44])
+
+[45]
+
+[46
+
+] (./refman.ind
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 1.
 
 
 
 
-[43
-
+[47
 
 
 ]
 
 
 
-[44]) (./refman.aux)
+[48]) (./refman.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1966,16 +2097,16 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: A9B1FD3B238ECE54A243DF7230F489BD;17777.
+(rerunfilecheck)             Checksum: CCC8CF7D2F36D5125C551BDE143BB216;19661.
  ) 
 Here is how much of TeX's memory you used:
- 20361 strings out of 474645
- 352177 string characters out of 5759193
- 855379 words of memory out of 5000000
- 42759 multiletter control sequences out of 15000+600000
- 674263 words of font info for 282 fonts, out of 8000000 for 9000
+ 20421 strings out of 474645
+ 353680 string characters out of 5759193
+ 873789 words of memory out of 5000000
+ 42795 multiletter control sequences out of 15000+600000
+ 682333 words of font info for 306 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 101i,16n,122p,1499b,813s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,122p,1499b,816s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1984,10 +2115,10 @@ b></usr/share/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /helvetic/uhvb8ac.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
 b></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (50 pages, 185778 bytes).
+Output written on refman.pdf (54 pages, 194936 bytes).
 PDF statistics:
- 1907 PDF objects out of 2073 (max. 8388607)
- 1372 compressed objects within 14 object streams
- 253 named destinations out of 1000 (max. 500000)
- 729 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2127 PDF objects out of 2487 (max. 8388607)
+ 1516 compressed objects within 16 object streams
+ 277 named destinations out of 1000 (max. 500000)
+ 785 words of extra memory for PDF output out of 10000 (max. 10000000)
 

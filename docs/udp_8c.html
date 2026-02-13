@@ -104,6 +104,7 @@ $(function(){initNavTree('udp_8c.html','',''); });
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;fcntl.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;net/if.h&gt;</code><br />
 <code>#include &lt;linux/if_packet.h&gt;</code><br />
 <code>#include &lt;net/ethernet.h&gt;</code><br />
@@ -122,7 +123,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a36d525cf4d116b2fe4ecc00222b256f1" id="r_a36d525cf4d116b2fe4ecc00222b256f1"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a36d525cf4d116b2fe4ecc00222b256f1">PACKED</a>&#160;&#160;&#160;__attribute__((packed))</td></tr>
+<tr class="memitem:ga0d38284fa20d6a5468680588f26778c8" id="r_ga0d38284fa20d6a5468680588f26778c8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga0d38284fa20d6a5468680588f26778c8">PACKED</a>&#160;&#160;&#160;__attribute__((packed))</td></tr>
 <tr class="memitem:aec1b28544d6f0672b991789c282e16fd" id="r_aec1b28544d6f0672b991789c282e16fd"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aec1b28544d6f0672b991789c282e16fd">HEAD_ETH</a>&#160;&#160;&#160;sizeof(struct ethhdr)</td></tr>
 <tr class="memitem:aa46766dfe4357cb2ba08de4344ee9366" id="r_aa46766dfe4357cb2ba08de4344ee9366"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aa46766dfe4357cb2ba08de4344ee9366">HEAD_UDP</a>&#160;&#160;&#160;sizeof(struct <a class="el" href="structudp__head.html">udp_head</a>)</td></tr>
 <tr class="memitem:a9667894cdd66fb6b19be4d60ac02483d" id="r_a9667894cdd66fb6b19be4d60ac02483d"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9667894cdd66fb6b19be4d60ac02483d">HEAD_IP</a>&#160;&#160;&#160;sizeof(struct iphdr)</td></tr>
@@ -140,12 +141,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaa2953647f643ce72255133a39adabe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function support for parsing port.  <br /></td></tr>
 <tr class="memitem:gaf1e2ebce0c63dad760436f66b5cca525" id="r_gaf1e2ebce0c63dad760436f66b5cca525"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#gaf1e2ebce0c63dad760436f66b5cca525">set_port_source_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const port)</td></tr>
 <tr class="memdesc:gaf1e2ebce0c63dad760436f66b5cca525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting source port in UDP package.  <br /></td></tr>
-<tr class="memitem:gac6884f2bace0913cd408db9a3f8fe2d2" id="r_gac6884f2bace0913cd408db9a3f8fe2d2"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#gac6884f2bace0913cd408db9a3f8fe2d2">set_port_destination_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const port)</td></tr>
-<tr class="memdesc:gac6884f2bace0913cd408db9a3f8fe2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting destination port in UDP package.  <br /></td></tr>
-<tr class="memitem:ga4dc882bdd284e70263b012928d64e1d9" id="r_ga4dc882bdd284e70263b012928d64e1d9"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga4dc882bdd284e70263b012928d64e1d9">set_ip_source_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const ip)</td></tr>
-<tr class="memdesc:ga4dc882bdd284e70263b012928d64e1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting source ip in UDP package.  <br /></td></tr>
-<tr class="memitem:ga2452742a3a258720842daa8cf8410a65" id="r_ga2452742a3a258720842daa8cf8410a65"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga2452742a3a258720842daa8cf8410a65">set_ip_destination_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const ip)</td></tr>
-<tr class="memdesc:ga2452742a3a258720842daa8cf8410a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting destination ip in UDP package.  <br /></td></tr>
+<tr class="memitem:ga34e91a82fe5ba0ff36b8b7a4162d2219" id="r_ga34e91a82fe5ba0ff36b8b7a4162d2219"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga34e91a82fe5ba0ff36b8b7a4162d2219">set_port_destantion_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const port)</td></tr>
+<tr class="memdesc:ga34e91a82fe5ba0ff36b8b7a4162d2219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting destantion port in UDP package.  <br /></td></tr>
+<tr class="memitem:ga4518c906c2ff7bcd466135f4457eb917" id="r_ga4518c906c2ff7bcd466135f4457eb917"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga4518c906c2ff7bcd466135f4457eb917">set_ip_address_source_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const ip)</td></tr>
+<tr class="memdesc:ga4518c906c2ff7bcd466135f4457eb917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting source ip address in UDP package.  <br /></td></tr>
+<tr class="memitem:ga9c92f03fd8bcd80c0a8717d8511f96bc" id="r_ga9c92f03fd8bcd80c0a8717d8511f96bc"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga9c92f03fd8bcd80c0a8717d8511f96bc">set_ip_address_destantion_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const ip)</td></tr>
+<tr class="memdesc:ga9c92f03fd8bcd80c0a8717d8511f96bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting destantion ip address in UDP package.  <br /></td></tr>
 <tr class="memitem:ga971cf1276d8804cc735075ee12142911" id="r_ga971cf1276d8804cc735075ee12142911"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga971cf1276d8804cc735075ee12142911">set_size_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const uint16_t size)</td></tr>
 <tr class="memdesc:ga971cf1276d8804cc735075ee12142911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function raw write size UDP package.  <br /></td></tr>
 <tr class="memitem:ga82c7f136a32df0299f5e5563094fbc4a" id="r_ga82c7f136a32df0299f5e5563094fbc4a"><td class="memItemLeft">uint16_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
@@ -172,8 +173,36 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga717eca5df0b8bed19c0872838f62ef94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function raw get pointer on UDP package.  <br /></td></tr>
 <tr class="memitem:ga4cb18d49955b5f28a3b5087c585ef31c" id="r_ga4cb18d49955b5f28a3b5087c585ef31c"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga4cb18d49955b5f28a3b5087c585ef31c">send_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
 <tr class="memdesc:ga4cb18d49955b5f28a3b5087c585ef31c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to send UDP package.  <br /></td></tr>
+<tr class="memitem:ga64c2315887ccf4c3f30560302ff32bb6" id="r_ga64c2315887ccf4c3f30560302ff32bb6"><td class="memItemLeft">static void *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga64c2315887ccf4c3f30560302ff32bb6">inet_mac</a> (const char *const mac_address)</td></tr>
+<tr class="memdesc:ga64c2315887ccf4c3f30560302ff32bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function return mac address in big endian.  <br /></td></tr>
+<tr class="memitem:ga84f3d8d0bdf4a67eec9f41953d14bda3" id="r_ga84f3d8d0bdf4a67eec9f41953d14bda3"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga84f3d8d0bdf4a67eec9f41953d14bda3">set_mac_address_source_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const mac_address)</td></tr>
+<tr class="memdesc:ga84f3d8d0bdf4a67eec9f41953d14bda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function setting mac address for source.  <br /></td></tr>
+<tr class="memitem:gabd1e12a15ac9abc09d83ce930b38ae8a" id="r_gabd1e12a15ac9abc09d83ce930b38ae8a"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#gabd1e12a15ac9abc09d83ce930b38ae8a">set_mac_address_destantion_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const mac_address)</td></tr>
+<tr class="memdesc:gabd1e12a15ac9abc09d83ce930b38ae8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function setting mac address for destantion.  <br /></td></tr>
+<tr class="memitem:ga51bca39eb65c7b8f6e34938d278bdedd" id="r_ga51bca39eb65c7b8f6e34938d278bdedd"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga51bca39eb65c7b8f6e34938d278bdedd">get_ip_address_source_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:ga51bca39eb65c7b8f6e34938d278bdedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting ip address source.  <br /></td></tr>
+<tr class="memitem:ga45f59892166b06c807f354c942ccd5dc" id="r_ga45f59892166b06c807f354c942ccd5dc"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga45f59892166b06c807f354c942ccd5dc">get_ip_address_destantion_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:ga45f59892166b06c807f354c942ccd5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting ip address destantion.  <br /></td></tr>
+<tr class="memitem:gad6b4c7e549d5e18d03a0b2390e91f9fe" id="r_gad6b4c7e549d5e18d03a0b2390e91f9fe"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#gad6b4c7e549d5e18d03a0b2390e91f9fe">get_interface_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:gad6b4c7e549d5e18d03a0b2390e91f9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting interface.  <br /></td></tr>
+<tr class="memitem:ga01073fc5ad591e38da01f4387c19e69a" id="r_ga01073fc5ad591e38da01f4387c19e69a"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga01073fc5ad591e38da01f4387c19e69a">get_mac_address_source_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:ga01073fc5ad591e38da01f4387c19e69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function getting mac address for source.  <br /></td></tr>
+<tr class="memitem:gaebc458fc40b923dfe0589e7f341acdf6" id="r_gaebc458fc40b923dfe0589e7f341acdf6"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#gaebc458fc40b923dfe0589e7f341acdf6">get_mac_address_destantion_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:gaebc458fc40b923dfe0589e7f341acdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function setting mac address for destantion.  <br /></td></tr>
+<tr class="memitem:ga85eee6188e607d0ee01af4ce1045e1f2" id="r_ga85eee6188e607d0ee01af4ce1045e1f2"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga85eee6188e607d0ee01af4ce1045e1f2">get_port_destantion_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:ga85eee6188e607d0ee01af4ce1045e1f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting port destantion.  <br /></td></tr>
+<tr class="memitem:ga629ad0b2e51e286471cb9fd9fbbb215f" id="r_ga629ad0b2e51e286471cb9fd9fbbb215f"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga629ad0b2e51e286471cb9fd9fbbb215f">get_port_source_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:ga629ad0b2e51e286471cb9fd9fbbb215f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting port source.  <br /></td></tr>
+<tr class="memitem:gaefb857160af3891be362e938b6955c88" id="r_gaefb857160af3891be362e938b6955c88"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#gaefb857160af3891be362e938b6955c88">print_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:gaefb857160af3891be362e938b6955c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function print all info about udp pack.  <br /></td></tr>
+<tr class="memitem:ga19e05e94bf630dbc97584b734ef176df" id="r_ga19e05e94bf630dbc97584b734ef176df"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga19e05e94bf630dbc97584b734ef176df">get_data_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:ga19e05e94bf630dbc97584b734ef176df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting data.  <br /></td></tr>
 <tr class="memitem:gae2b2cb87ed580f5384fce15a6599f364" id="r_gae2b2cb87ed580f5384fce15a6599f364"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a> (<a class="el" href="group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
 <tr class="memdesc:gae2b2cb87ed580f5384fce15a6599f364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function free UDP package.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga0d38284fa20d6a5468680588f26778c8" id="r_ga0d38284fa20d6a5468680588f26778c8"><td class="memItemLeft">struct <a class="el" href="structudp__head.html">udp_head</a>&#160;</td><td class="memItemRight"><a class="el" href="group__UdpPack.html#ga0d38284fa20d6a5468680588f26778c8">PACKED</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Code file for work udp package. </p>
@@ -281,7 +310,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(((left) &lt; (rigth)) ? (left) : (rigth))</div>
+<b>Value:</b><div class="fragment"><div class="line">(((left) &lt; ((typeof(left))rigth)) ? (left) : ((typeof(left))rigth))</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -293,20 +322,6 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define NULL_CHECKSUM&#160;&#160;&#160;0x0000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a36d525cf4d116b2fe4ecc00222b256f1" name="a36d525cf4d116b2fe4ecc00222b256f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36d525cf4d116b2fe4ecc00222b256f1">&#9670;&#160;</a></span>PACKED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PACKED&#160;&#160;&#160;__attribute__((packed))</td>
         </tr>
       </table>
 </div><div class="memdoc">

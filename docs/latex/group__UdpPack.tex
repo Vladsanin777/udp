@@ -14,6 +14,11 @@ struct \doxymbox{\hyperlink{structudp__pack}{udp\+\_\+pack}}
 \begin{DoxyCompactList}\small\item\em Struct is UDP package. \end{DoxyCompactList}\item 
 struct \doxymbox{\hyperlink{structpseudo__header}{pseudo\+\_\+header}}
 \begin{DoxyCompactList}\small\item\em Struct \doxylink{structpseudo__header}{pseudo\+\_\+header} for calculate checksum for UDP package. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{group__UdpPack_ga0d38284fa20d6a5468680588f26778c8}{PACKED}}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((packed))
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,16 +39,18 @@ static void \doxymbox{\hyperlink{group__UdpPack_ga43bd25d43834b433711fdf4b1ee6fd
 \begin{DoxyCompactList}\small\item\em Function calculate checksum for ip header and UDP package. \end{DoxyCompactList}\item 
 static void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga717eca5df0b8bed19c0872838f62ef94}{get\+\_\+pack\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function raw get pointer on UDP package. \end{DoxyCompactList}\item 
+static void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga64c2315887ccf4c3f30560302ff32bb6}{inet\+\_\+mac}} (const char \texorpdfstring{$\ast$}{*}const mac\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Function return mac address in big endian. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack}} (void)
 \begin{DoxyCompactList}\small\item\em Function for create object UDP package. \end{DoxyCompactList}\item 
 ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaf1e2ebce0c63dad760436f66b5cca525}{set\+\_\+port\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const port)
 \begin{DoxyCompactList}\small\item\em Function for setting source port in UDP package. \end{DoxyCompactList}\item 
-ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}{set\+\_\+port\+\_\+destination\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const port)
-\begin{DoxyCompactList}\small\item\em Function for setting destination port in UDP package. \end{DoxyCompactList}\item 
-ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
-\begin{DoxyCompactList}\small\item\em Function for setting source ip in UDP package. \end{DoxyCompactList}\item 
-ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}{set\+\_\+ip\+\_\+destination\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
-\begin{DoxyCompactList}\small\item\em Function for setting destination ip in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga34e91a82fe5ba0ff36b8b7a4162d2219}{set\+\_\+port\+\_\+destantion\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const port)
+\begin{DoxyCompactList}\small\item\em Function for setting destantion port in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga4518c906c2ff7bcd466135f4457eb917}{set\+\_\+ip\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
+\begin{DoxyCompactList}\small\item\em Function for setting source ip address in UDP package. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga9c92f03fd8bcd80c0a8717d8511f96bc}{set\+\_\+ip\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const ip)
+\begin{DoxyCompactList}\small\item\em Function for setting destantion ip address in UDP package. \end{DoxyCompactList}\item 
 uint16\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga82c7f136a32df0299f5e5563094fbc4a}{get\+\_\+size\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function give size data in UDP package. \end{DoxyCompactList}\item 
 ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga5084a9ee28a51e81d4f1972b102a8883}{add\+\_\+date\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, void \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t size)
@@ -60,30 +67,52 @@ ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga6c39bc361feefc6b011fb569fa8d3
 \begin{DoxyCompactList}\small\item\em Function for pick interface to send UDP package. \end{DoxyCompactList}\item 
 ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga4cb18d49955b5f28a3b5087c585ef31c}{send\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function to send UDP package. \end{DoxyCompactList}\item 
-ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga90a88e1fe527abd166f422638403200f}{set\+\_\+mac\+\_\+address\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const mac\+\_\+address)
-\begin{DoxyCompactList}\small\item\em Function setting mac address. \end{DoxyCompactList}\item 
-char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga847efb6b1f33aaa86317c098f4e18dc0}{get\+\_\+mac\+\_\+address\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
-\begin{DoxyCompactList}\small\item\em Function for getting mac address. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga01073fc5ad591e38da01f4387c19e69a}{get\+\_\+mac\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function getting mac address for source. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_gaebc458fc40b923dfe0589e7f341acdf6}{get\+\_\+mac\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function setting mac address for destantion. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_ga84f3d8d0bdf4a67eec9f41953d14bda3}{set\+\_\+mac\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const mac\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Function setting mac address for source. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gabd1e12a15ac9abc09d83ce930b38ae8a}{set\+\_\+mac\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack, const char \texorpdfstring{$\ast$}{*}const mac\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Function setting mac address for destantion. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_gad6b4c7e549d5e18d03a0b2390e91f9fe}{get\+\_\+interface\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function for getting interface. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga629ad0b2e51e286471cb9fd9fbbb215f}{get\+\_\+port\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function for getting port source. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga85eee6188e607d0ee01af4ce1045e1f2}{get\+\_\+port\+\_\+destantion\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function for getting port destantion. \end{DoxyCompactList}\item 
-char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_gaef27cc59b3f78a734663b6ac6fdfe944}{get\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
-\begin{DoxyCompactList}\small\item\em Function for getting ip source. \end{DoxyCompactList}\item 
-char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_gadd7acf376c3464f521e41433110a3e1d}{get\+\_\+ip\+\_\+destantion\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
-\begin{DoxyCompactList}\small\item\em Function for getting ip destantion. \end{DoxyCompactList}\item 
-void \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga8318b775cb92c3fc4629b6e6e395cc4b}{get\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga51bca39eb65c7b8f6e34938d278bdedd}{get\+\_\+ip\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function for getting ip address source. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga45f59892166b06c807f354c942ccd5dc}{get\+\_\+ip\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function for getting ip address destantion. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga19e05e94bf630dbc97584b734ef176df}{get\+\_\+data\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function for getting data. \end{DoxyCompactList}\item 
 char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__UdpPack_ga41d3c898afbfea462344aa3615b28c1c}{get\+\_\+data\+\_\+hex\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function for getting data hex. \end{DoxyCompactList}\item 
+ssize\+\_\+t \doxymbox{\hyperlink{group__UdpPack_gaefb857160af3891be362e938b6955c88}{print\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
+\begin{DoxyCompactList}\small\item\em Function print all info about udp pack. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\+\_\+udp\+\_\+pack}} (\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}} pack)
 \begin{DoxyCompactList}\small\item\em Function free UDP package. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structudp__head}{udp\+\_\+head}} \doxymbox{\hyperlink{group__UdpPack_ga0d38284fa20d6a5468680588f26778c8}{PACKED}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Group function for work udp package. 
+
+
+
+\label{doc-define-members}
+\Hypertarget{group__UdpPack_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__UdpPack_ga0d38284fa20d6a5468680588f26778c8}\index{work for udp@{work for udp}!PACKED@{PACKED}}
+\index{PACKED@{PACKED}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{PACKED}{PACKED}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga0d38284fa20d6a5468680588f26778c8} 
+struct \doxymbox{\hyperlink{structpseudo__header}{pseudo\+\_\+header}} PACKED~\+\_\+\+\_\+attribute\+\_\+\+\_\+((packed))}
 
 
 
@@ -270,7 +299,7 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Data hex in UDP package. Usage example. 
+Data hex in UDP package or NULL pointer on error. Usage example. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
@@ -280,20 +309,25 @@ Data hex in UDP package. Usage example.
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ data\ =\ \doxymbox{\hyperlink{group__UdpPack_ga41d3c898afbfea462344aa3615b28c1c}{get\_data\_hex\_udp\_pack}}(pack);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (data\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_data\_hex\_udp\_pack;}
+\DoxyCodeLine{\ \ \ \ \}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
+\DoxyCodeLine{get\_not\_data\_hex\_udp\_pack:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_ga8318b775cb92c3fc4629b6e6e395cc4b}\index{work for udp@{work for udp}!get\_data\_udp\_pack@{get\_data\_udp\_pack}}
+\Hypertarget{group__UdpPack_ga19e05e94bf630dbc97584b734ef176df}\index{work for udp@{work for udp}!get\_data\_udp\_pack@{get\_data\_udp\_pack}}
 \index{get\_data\_udp\_pack@{get\_data\_udp\_pack}!work for udp@{work for udp}}
 \doxysubsubsection{\texorpdfstring{get\_data\_udp\_pack()}{get\_data\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_ga8318b775cb92c3fc4629b6e6e395cc4b} 
-void \texorpdfstring{$\ast$}{*} get\+\_\+data\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{group__UdpPack_ga19e05e94bf630dbc97584b734ef176df} 
+char \texorpdfstring{$\ast$}{*} get\+\_\+data\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
 
 
 
@@ -317,7 +351,7 @@ Data in UDP package. Usage example.
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ *\ data\ =\ \doxymbox{\hyperlink{group__UdpPack_ga8318b775cb92c3fc4629b6e6e395cc4b}{get\_data\_udp\_pack}}(pack);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ *\ data\ =\ \doxymbox{\hyperlink{group__UdpPack_ga19e05e94bf630dbc97584b734ef176df}{get\_data\_udp\_pack}}(pack);}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
@@ -375,20 +409,20 @@ String or NULL pointer is fail. Usage example.
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_gadd7acf376c3464f521e41433110a3e1d}\index{work for udp@{work for udp}!get\_ip\_destantion\_udp\_pack@{get\_ip\_destantion\_udp\_pack}}
-\index{get\_ip\_destantion\_udp\_pack@{get\_ip\_destantion\_udp\_pack}!work for udp@{work for udp}}
-\doxysubsubsection{\texorpdfstring{get\_ip\_destantion\_udp\_pack()}{get\_ip\_destantion\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_gadd7acf376c3464f521e41433110a3e1d} 
-char \texorpdfstring{$\ast$}{*} get\+\_\+ip\+\_\+destantion\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+\Hypertarget{group__UdpPack_ga45f59892166b06c807f354c942ccd5dc}\index{work for udp@{work for udp}!get\_ip\_address\_destantion\_udp\_pack@{get\_ip\_address\_destantion\_udp\_pack}}
+\index{get\_ip\_address\_destantion\_udp\_pack@{get\_ip\_address\_destantion\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{get\_ip\_address\_destantion\_udp\_pack()}{get\_ip\_address\_destantion\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga45f59892166b06c807f354c942ccd5dc} 
+char \texorpdfstring{$\ast$}{*} get\+\_\+ip\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
 
 
 
-Function for getting ip destantion. 
+Function for getting ip address destantion. 
 
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
 
-You can call \doxylink{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}{set\+\_\+ip\+\_\+destination\+\_\+udp\+\_\+pack} before this. 
+You can call \doxylink{group__UdpPack_ga9c92f03fd8bcd80c0a8717d8511f96bc}{set\+\_\+ip\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack} before this. 
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -404,39 +438,39 @@ String or NULL pointer is fail. Usage example.
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\_ip\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga4518c906c2ff7bcd466135f4457eb917}{set\_ip\_address\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_ip\_destantion;}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ ip\_destantion\ =\ NULL;}
-\DoxyCodeLine{\ \ \ \ ip\_destantion\ =\ \doxymbox{\hyperlink{group__UdpPack_gadd7acf376c3464f521e41433110a3e1d}{get\_ip\_destantion\_udp\_pack}}(pack);}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (ip\_destantion\ ==\ NULL)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ getting\_not\_ip\_destantion;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ ip\_address\ =\ NULL;}
+\DoxyCodeLine{\ \ \ \ ip\_address\ =\ get\_ip\_destantion\_udp\_pack(pack);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (ip\_address\ ==\ NULL)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ getting\_not\_ip\_address;}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
-\DoxyCodeLine{getting\_not\_ip\_destantion:}
-\DoxyCodeLine{setting\_not\_ip\_destantion:}
+\DoxyCodeLine{getting\_not\_ip\_address:}
+\DoxyCodeLine{setting\_not\_ip\_address:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_gaef27cc59b3f78a734663b6ac6fdfe944}\index{work for udp@{work for udp}!get\_ip\_source\_udp\_pack@{get\_ip\_source\_udp\_pack}}
-\index{get\_ip\_source\_udp\_pack@{get\_ip\_source\_udp\_pack}!work for udp@{work for udp}}
-\doxysubsubsection{\texorpdfstring{get\_ip\_source\_udp\_pack()}{get\_ip\_source\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_gaef27cc59b3f78a734663b6ac6fdfe944} 
-char \texorpdfstring{$\ast$}{*} get\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+\Hypertarget{group__UdpPack_ga51bca39eb65c7b8f6e34938d278bdedd}\index{work for udp@{work for udp}!get\_ip\_address\_source\_udp\_pack@{get\_ip\_address\_source\_udp\_pack}}
+\index{get\_ip\_address\_source\_udp\_pack@{get\_ip\_address\_source\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{get\_ip\_address\_source\_udp\_pack()}{get\_ip\_address\_source\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga51bca39eb65c7b8f6e34938d278bdedd} 
+char \texorpdfstring{$\ast$}{*} get\+\_\+ip\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
 
 
 
-Function for getting ip source. 
+Function for getting ip address source. 
 
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
 
-You can call \doxylink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack} before this. 
+You can call \doxylink{group__UdpPack_ga4518c906c2ff7bcd466135f4457eb917}{set\+\_\+ip\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack} before this. 
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -452,39 +486,39 @@ String or NULL pointer is fail. Usage example.
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\_ip\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga4518c906c2ff7bcd466135f4457eb917}{set\_ip\_address\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_ip\_source;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_ip\_address;}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ ip\_source\ =\ NULL;}
-\DoxyCodeLine{\ \ \ \ ip\_source\ =\ \doxymbox{\hyperlink{group__UdpPack_gaef27cc59b3f78a734663b6ac6fdfe944}{get\_ip\_source\_udp\_pack}}(pack);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ ip\_address\ =\ NULL;}
+\DoxyCodeLine{\ \ \ \ ip\_address\ =\ \doxymbox{\hyperlink{group__UdpPack_ga51bca39eb65c7b8f6e34938d278bdedd}{get\_ip\_address\_source\_udp\_pack}}(pack);}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (ip\_source\ ==\ NULL)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ getting\_not\_ip\_source;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ getting\_not\_ip\_address;}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
-\DoxyCodeLine{getting\_not\_ip\_source:}
-\DoxyCodeLine{setting\_not\_ip\_source:}
+\DoxyCodeLine{getting\_not\_ip\_address:}
+\DoxyCodeLine{setting\_not\_ip\_address:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_ga847efb6b1f33aaa86317c098f4e18dc0}\index{work for udp@{work for udp}!get\_mac\_address\_udp\_pack@{get\_mac\_address\_udp\_pack}}
-\index{get\_mac\_address\_udp\_pack@{get\_mac\_address\_udp\_pack}!work for udp@{work for udp}}
-\doxysubsubsection{\texorpdfstring{get\_mac\_address\_udp\_pack()}{get\_mac\_address\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_ga847efb6b1f33aaa86317c098f4e18dc0} 
-char \texorpdfstring{$\ast$}{*} get\+\_\+mac\+\_\+address\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+\Hypertarget{group__UdpPack_gaebc458fc40b923dfe0589e7f341acdf6}\index{work for udp@{work for udp}!get\_mac\_address\_destantion\_udp\_pack@{get\_mac\_address\_destantion\_udp\_pack}}
+\index{get\_mac\_address\_destantion\_udp\_pack@{get\_mac\_address\_destantion\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{get\_mac\_address\_destantion\_udp\_pack()}{get\_mac\_address\_destantion\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gaebc458fc40b923dfe0589e7f341acdf6} 
+char \texorpdfstring{$\ast$}{*} get\+\_\+mac\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
 
 
 
-Function for getting mac address. 
+Function setting mac address for destantion. 
 
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
 
-You can call \doxylink{group__UdpPack_ga90a88e1fe527abd166f422638403200f}{set\+\_\+mac\+\_\+address\+\_\+udp\+\_\+pack} before this. 
+You can call \doxylink{group__UdpPack_gabd1e12a15ac9abc09d83ce930b38ae8a}{set\+\_\+mac\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack} before this. 
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -500,18 +534,60 @@ String or NULL pointer is fail. Usage example.
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga90a88e1fe527abd166f422638403200f}{set\_mac\_address\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}ff:ff:ff:ff:ff:ff"{}});}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_gabd1e12a15ac9abc09d83ce930b38ae8a}{set\_mac\_address\_destantion\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}ff:ff:ff:ff:ff:ff"{}});}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_mac\_address;}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ mac\_address\ =\ NULL;}
-\DoxyCodeLine{\ \ \ \ mac\_address\ =\ \doxymbox{\hyperlink{group__UdpPack_ga847efb6b1f33aaa86317c098f4e18dc0}{get\_mac\_address\_udp\_pack}}(pack);}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (mac\_address\ ==\ NULL)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ getting\_not\_mac\_address;}
+\DoxyCodeLine{\ \ \ \ mac\_address\ =\ \doxymbox{\hyperlink{group__UdpPack_gaebc458fc40b923dfe0589e7f341acdf6}{get\_mac\_address\_destantion\_udp\_pack}}(\doxymbox{\hyperlink{structudp__pack}{udp\_pack}}\ pack);}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
-\DoxyCodeLine{getting\_not\_mac\_address:}
+\DoxyCodeLine{setting\_not\_mac\_address:}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga01073fc5ad591e38da01f4387c19e69a}\index{work for udp@{work for udp}!get\_mac\_address\_source\_udp\_pack@{get\_mac\_address\_source\_udp\_pack}}
+\index{get\_mac\_address\_source\_udp\_pack@{get\_mac\_address\_source\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{get\_mac\_address\_source\_udp\_pack()}{get\_mac\_address\_source\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga01073fc5ad591e38da01f4387c19e69a} 
+char \texorpdfstring{$\ast$}{*} get\+\_\+mac\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+
+
+
+Function getting mac address for source. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+
+You can call \doxylink{group__UdpPack_ga84f3d8d0bdf4a67eec9f41953d14bda3}{set\+\_\+mac\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String or NULL pointer is fail. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga84f3d8d0bdf4a67eec9f41953d14bda3}{set\_mac\_address\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}ff:ff:ff:ff:ff:ff"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_mac\_address;}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ mac\_address\ =\ \ NULL;}
+\DoxyCodeLine{\ \ \ \ mac\_address\ =\ \doxymbox{\hyperlink{group__UdpPack_ga01073fc5ad591e38da01f4387c19e69a}{get\_mac\_address\_source\_udp\_pack}}(pack);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
 \DoxyCodeLine{setting\_not\_mac\_address:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
@@ -534,6 +610,9 @@ Function raw get pointer on UDP package.
 \doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Getting UDP package. 
+\end{DoxyReturn}
 \begin{DoxyNote}{Note}
 This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
 \end{DoxyNote}
@@ -550,7 +629,7 @@ Function for getting port destantion.
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
 
-You can call \doxylink{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}{set\+\_\+port\+\_\+destination\+\_\+udp\+\_\+pack} before this. 
+You can call \doxylink{group__UdpPack_ga34e91a82fe5ba0ff36b8b7a4162d2219}{set\+\_\+port\+\_\+destantion\+\_\+udp\+\_\+pack} before this. 
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
@@ -566,9 +645,9 @@ String or NULL pointer is fail. Usage example.
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}{set\_port\_destination\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}8001"{}});}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga34e91a82fe5ba0ff36b8b7a4162d2219}{set\_port\_destantion\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}8001"{}});}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_port\_destination;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_port\_destantion;}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{char}\ *\ port\_destantion\ =\ NULL;}
 \DoxyCodeLine{\ \ \ \ port\_destantion\ =\ \doxymbox{\hyperlink{group__UdpPack_ga85eee6188e607d0ee01af4ce1045e1f2}{get\_port\_destantion\_udp\_pack}}(pack);}
@@ -578,7 +657,7 @@ String or NULL pointer is fail. Usage example.
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
 \DoxyCodeLine{getting\_not\_port\_destantion:}
-\DoxyCodeLine{setting\_not\_port\_destination:}
+\DoxyCodeLine{setting\_not\_port\_destantion:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
@@ -741,6 +820,27 @@ Length data in UDP package. Usage example.
 \end{DoxyCode}
  
 \end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga64c2315887ccf4c3f30560302ff32bb6}\index{work for udp@{work for udp}!inet\_mac@{inet\_mac}}
+\index{inet\_mac@{inet\_mac}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{inet\_mac()}{inet\_mac()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga64c2315887ccf4c3f30560302ff32bb6} 
+void \texorpdfstring{$\ast$}{*} inet\+\_\+mac (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}const}]{mac\+\_\+address}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function return mac address in big endian. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Getting buffer mac address. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
+\end{DoxyNote}
 \Hypertarget{group__UdpPack_gaa2953647f643ce72255133a39adabe1f}\index{work for udp@{work for udp}!inet\_port@{inet\_port}}
 \index{inet\_port@{inet\_port}!work for udp@{work for udp}}
 \doxysubsubsection{\texorpdfstring{inet\_port()}{inet\_port()}}
@@ -785,6 +885,44 @@ pointer or null on error. Usage example.
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ using\ udp\_pack\_t}}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_gaefb857160af3891be362e938b6955c88}\index{work for udp@{work for udp}!print\_udp\_pack@{print\_udp\_pack}}
+\index{print\_udp\_pack@{print\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{print\_udp\_pack()}{print\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gaefb857160af3891be362e938b6955c88} 
+ssize\+\_\+t print\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{}\end{DoxyParamCaption})}
+
+
+
+Function print all info about udp pack. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_gaefb857160af3891be362e938b6955c88}{print\_udp\_pack}}(pack);}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ print\_not\_udp\_pack;}
+\DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
+\DoxyCodeLine{print\_not\_udp\_pack:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
@@ -970,15 +1108,15 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}\index{work for udp@{work for udp}!set\_ip\_destination\_udp\_pack@{set\_ip\_destination\_udp\_pack}}
-\index{set\_ip\_destination\_udp\_pack@{set\_ip\_destination\_udp\_pack}!work for udp@{work for udp}}
-\doxysubsubsection{\texorpdfstring{set\_ip\_destination\_udp\_pack()}{set\_ip\_destination\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_ga2452742a3a258720842daa8cf8410a65} 
-ssize\+\_\+t set\+\_\+ip\+\_\+destination\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{ip}{}\end{DoxyParamCaption})}
+\Hypertarget{group__UdpPack_ga9c92f03fd8bcd80c0a8717d8511f96bc}\index{work for udp@{work for udp}!set\_ip\_address\_destantion\_udp\_pack@{set\_ip\_address\_destantion\_udp\_pack}}
+\index{set\_ip\_address\_destantion\_udp\_pack@{set\_ip\_address\_destantion\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_ip\_address\_destantion\_udp\_pack()}{set\_ip\_address\_destantion\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga9c92f03fd8bcd80c0a8717d8511f96bc} 
+ssize\+\_\+t set\+\_\+ip\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{ip}{}\end{DoxyParamCaption})}
 
 
 
-Function for setting destination ip in UDP package. 
+Function for setting destantion ip address in UDP package. 
 
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
@@ -987,7 +1125,7 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \begin{DoxyParams}[1]{Parameters}
 \doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
 \hline
-\doxymbox{\texttt{in}}  & {\em ip} & Destination ip to send. \\
+\doxymbox{\texttt{in}}  & {\em ip} & Destination ip address to send. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -999,22 +1137,26 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga2452742a3a258720842daa8cf8410a65}{set\_ip\_destination\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga9c92f03fd8bcd80c0a8717d8511f96bc}{set\_ip\_address\_destantion\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_ip\_address;}
+\DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
+\DoxyCodeLine{setting\_not\_ip\_address:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}\index{work for udp@{work for udp}!set\_ip\_source\_udp\_pack@{set\_ip\_source\_udp\_pack}}
-\index{set\_ip\_source\_udp\_pack@{set\_ip\_source\_udp\_pack}!work for udp@{work for udp}}
-\doxysubsubsection{\texorpdfstring{set\_ip\_source\_udp\_pack()}{set\_ip\_source\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9} 
-ssize\+\_\+t set\+\_\+ip\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{ip}{}\end{DoxyParamCaption})}
+\Hypertarget{group__UdpPack_ga4518c906c2ff7bcd466135f4457eb917}\index{work for udp@{work for udp}!set\_ip\_address\_source\_udp\_pack@{set\_ip\_address\_source\_udp\_pack}}
+\index{set\_ip\_address\_source\_udp\_pack@{set\_ip\_address\_source\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_ip\_address\_source\_udp\_pack()}{set\_ip\_address\_source\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga4518c906c2ff7bcd466135f4457eb917} 
+ssize\+\_\+t set\+\_\+ip\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{ip}{}\end{DoxyParamCaption})}
 
 
 
-Function for setting source ip in UDP package. 
+Function for setting source ip address in UDP package. 
 
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
@@ -1035,22 +1177,26 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga4dc882bdd284e70263b012928d64e1d9}{set\_ip\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga4518c906c2ff7bcd466135f4457eb917}{set\_ip\_address\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}127.0.0.1"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ set\_not\_ip\_address;}
+\DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
+\DoxyCodeLine{set\_not\_ip\_address:}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_ga90a88e1fe527abd166f422638403200f}\index{work for udp@{work for udp}!set\_mac\_address\_udp\_pack@{set\_mac\_address\_udp\_pack}}
-\index{set\_mac\_address\_udp\_pack@{set\_mac\_address\_udp\_pack}!work for udp@{work for udp}}
-\doxysubsubsection{\texorpdfstring{set\_mac\_address\_udp\_pack()}{set\_mac\_address\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_ga90a88e1fe527abd166f422638403200f} 
-ssize\+\_\+t set\+\_\+mac\+\_\+address\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{mac\+\_\+address}{}\end{DoxyParamCaption})}
+\Hypertarget{group__UdpPack_gabd1e12a15ac9abc09d83ce930b38ae8a}\index{work for udp@{work for udp}!set\_mac\_address\_destantion\_udp\_pack@{set\_mac\_address\_destantion\_udp\_pack}}
+\index{set\_mac\_address\_destantion\_udp\_pack@{set\_mac\_address\_destantion\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_mac\_address\_destantion\_udp\_pack()}{set\_mac\_address\_destantion\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_gabd1e12a15ac9abc09d83ce930b38ae8a} 
+ssize\+\_\+t set\+\_\+mac\+\_\+address\+\_\+destantion\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{mac\+\_\+address}{}\end{DoxyParamCaption})}
 
 
 
-Function setting mac address. 
+Function setting mac address for destantion. 
 
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
@@ -1059,7 +1205,7 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \begin{DoxyParams}[1]{Parameters}
 \doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
 \hline
-\doxymbox{\texttt{in}}  & {\em mac\+\_\+address} & String is mac address. \\
+\doxymbox{\texttt{in}}  & {\em mac\+\_\+address} & String is mac address destantion. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1071,7 +1217,7 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga90a88e1fe527abd166f422638403200f}{set\_mac\_address\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}ff:ff:ff:ff:ff:ff"{}});}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_gabd1e12a15ac9abc09d83ce930b38ae8a}{set\_mac\_address\_destantion\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}ff:ff:ff:ff:ff:ff"{}});}
 \DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_mac\_address;}
 \DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
@@ -1082,15 +1228,55 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}\index{work for udp@{work for udp}!set\_port\_destination\_udp\_pack@{set\_port\_destination\_udp\_pack}}
-\index{set\_port\_destination\_udp\_pack@{set\_port\_destination\_udp\_pack}!work for udp@{work for udp}}
-\doxysubsubsection{\texorpdfstring{set\_port\_destination\_udp\_pack()}{set\_port\_destination\_udp\_pack()}}
-{\footnotesize\ttfamily \label{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2} 
-ssize\+\_\+t set\+\_\+port\+\_\+destination\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{port}{}\end{DoxyParamCaption})}
+\Hypertarget{group__UdpPack_ga84f3d8d0bdf4a67eec9f41953d14bda3}\index{work for udp@{work for udp}!set\_mac\_address\_source\_udp\_pack@{set\_mac\_address\_source\_udp\_pack}}
+\index{set\_mac\_address\_source\_udp\_pack@{set\_mac\_address\_source\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_mac\_address\_source\_udp\_pack()}{set\_mac\_address\_source\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga84f3d8d0bdf4a67eec9f41953d14bda3} 
+ssize\+\_\+t set\+\_\+mac\+\_\+address\+\_\+source\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{mac\+\_\+address}{}\end{DoxyParamCaption})}
 
 
 
-Function for setting destination port in UDP package. 
+Function setting mac address for source. 
+
+\begin{DoxyNote}{Note}
+You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in,out}}  & {\em pack} & UDP package for work. \\
+\hline
+\doxymbox{\texttt{in}}  & {\em mac\+\_\+address} & String is mac address source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or -\/1 on error. Usage example. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ssize\_t\ ret\ =\ 0;}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\_pack\_t}}\ pack\ =\ \doxymbox{\hyperlink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\_udp\_pack}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (pack\ ==\ NULL)\ \{}
+\DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{ret\ =\ \doxymbox{\hyperlink{group__UdpPack_ga84f3d8d0bdf4a67eec9f41953d14bda3}{set\_mac\_address\_source\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}ff:ff:ff:ff:ff:ff"{}});}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (ret\ ==\ -\/1)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ setting\_not\_mac\_address;}
+\DoxyCodeLine{\textcolor{comment}{//\ other\ code\ whit\ udp\_pack\_t}}
+\DoxyCodeLine{setting\_not\_mac\_address:}
+\DoxyCodeLine{get\_not\_udp\_pack:}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
+
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\Hypertarget{group__UdpPack_ga34e91a82fe5ba0ff36b8b7a4162d2219}\index{work for udp@{work for udp}!set\_port\_destantion\_udp\_pack@{set\_port\_destantion\_udp\_pack}}
+\index{set\_port\_destantion\_udp\_pack@{set\_port\_destantion\_udp\_pack}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{set\_port\_destantion\_udp\_pack()}{set\_port\_destantion\_udp\_pack()}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga34e91a82fe5ba0ff36b8b7a4162d2219} 
+ssize\+\_\+t set\+\_\+port\+\_\+destantion\+\_\+udp\+\_\+pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{group__UdpPack_ga6356b6b21b2a1a5c62a7d1085eb6f025}{udp\+\_\+pack\+\_\+t}}}]{pack}{, }\item[{const char \texorpdfstring{$\ast$}{*}const}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Function for setting destantion port in UDP package. 
 
 \begin{DoxyNote}{Note}
 You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack} before this. 
@@ -1111,7 +1297,7 @@ You must call \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\
 \DoxyCodeLine{\ \ \ \ ret\ =\ -\/1;}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{goto}\ get\_not\_udp\_pack;}
 \DoxyCodeLine{\}}
-\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gac6884f2bace0913cd408db9a3f8fe2d2}{set\_port\_destination\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}8003"{}});}
+\DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_ga34e91a82fe5ba0ff36b8b7a4162d2219}{set\_port\_destantion\_udp\_pack}}(pack,\ \textcolor{stringliteral}{"{}8003"{}});}
 \DoxyCodeLine{get\_not\_udp\_pack:}
 \DoxyCodeLine{\doxymbox{\hyperlink{group__UdpPack_gae2b2cb87ed580f5384fce15a6599f364}{destroy\_udp\_pack}}(pack);}
 
@@ -1197,3 +1383,14 @@ Sum buffer in big endian.
 \begin{DoxyNote}{Note}
 This function is private. Not used outside \doxylink{udp_8c}{udp\+\_\+lib/\+udp.\+c} 
 \end{DoxyNote}
+
+
+\label{doc-var-members}
+\Hypertarget{group__UdpPack_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__UdpPack_ga0d38284fa20d6a5468680588f26778c8}\index{work for udp@{work for udp}!PACKED@{PACKED}}
+\index{PACKED@{PACKED}!work for udp@{work for udp}}
+\doxysubsubsection{\texorpdfstring{PACKED}{PACKED}}
+{\footnotesize\ttfamily \label{group__UdpPack_ga0d38284fa20d6a5468680588f26778c8} 
+struct \doxymbox{\hyperlink{structpseudo__header}{pseudo\+\_\+header}} PACKED}
+

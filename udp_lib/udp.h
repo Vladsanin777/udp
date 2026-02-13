@@ -370,7 +370,7 @@ char * get_mac_address_source_udp_pack(udp_pack_t pack);
  * destroy_udp_pack(pack);
  * @endcode
  */
-ssize_t get_mac_address_destantion_udp_pack(udp_pack_t pack);
+char * get_mac_address_destantion_udp_pack(udp_pack_t pack);
 
 /**
  * @brief Function setting mac address for source.
@@ -639,7 +639,7 @@ uint16_t get_size_data_udp_pack(udp_pack_t pack);
  * destroy_udp_pack(pack);
  * @endcode
  */
-void * get_data_udp_pack(udp_pack_t pack);
+char * get_data_udp_pack(udp_pack_t pack);
 
 /**
  * @brief Function for getting data hex.

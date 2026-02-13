@@ -15,8 +15,8 @@ int main(int argc, char ** argv) {
     static struct option long_options[] = { \
         {"stdio", no_argument, NULL, 'w'}, \
         {"print", no_argument, NULL, 'e'}, \
-        {"ip-destination", 1, NULL, 'i'}, \
-        {"ip-source", 1, NULL, 's'}, \
+        {"ip-address-destination", 1, NULL, 'i'}, \
+        {"ip-address-source", 1, NULL, 's'}, \
         {"port-destanition", 1, NULL, 'p'}, \
         {"port-source", 1, NULL, 'o'}, \
         {"interface", 1, NULL, 'n'}, \
@@ -34,7 +34,7 @@ int main(int argc, char ** argv) {
     }
 
     while (cmd) {
-        cmd = getopt_long(argc, argv, "wi:s:p:o:n:f:m:a:", long_options, &option_index);
+        cmd = getopt_long(argc, argv, "wei:s:p:o:n:f:m:a:", long_options, &option_index);
 
         switch (cmd) {
             case 'w':
@@ -92,14 +92,5 @@ send_not_udp_pack:
 error_in_action:
     destroy_udp_pack(pack);
 get_not_memory_udp_pack:
-    if (true) {
-        get_ip_address_destantion_udp_pack(pack);
-        get_ip_address_source_udp_pack(pack);
-        get_port_destantion_udp_pack(pack);
-        get_port_source_udp_pack(pack);
-        get_interface_udp_pack(pack);
-        get_mac_address_destantion_udp_pack(pack);
-        get_mac_address_source_udp_pack(pack);
-    }
     return ret;
 }
