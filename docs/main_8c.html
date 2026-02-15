@@ -99,6 +99,7 @@ $(function(){initNavTree('main_8c.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627" id="r_a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point for the UDP packet crafting and transmission utility.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
@@ -119,6 +120,38 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Entry point for the UDP packet crafting and transmission utility. </p>
+<p>This program parses command-line arguments to build a custom UDP packet. It allows configuration of MAC addresses, IP addresses, ports, and payload data.</p>
+<p><b>Command-line Options:</b></p><ul>
+<li><span class="tt">-w</span>, <span class="tt">--stdio</span> Read payload data from standard input.</li>
+<li><span class="tt">-e</span>, <span class="tt">--print</span> Print the packet structure to the console before sending.</li>
+<li><span class="tt">-i</span>, <span class="tt">--ip-address-destination</span> Set the destination IPv4 address.</li>
+<li><span class="tt">-s</span>, <span class="tt">--ip-address-source</span> Set the source IPv4 address.</li>
+<li><span class="tt">-p</span>, <span class="tt">--port-destanition</span> Set the destination UDP port.</li>
+<li><span class="tt">-o</span>, <span class="tt">--port-source</span> Set the source UDP port.</li>
+<li><span class="tt">-n</span>, <span class="tt">--interface</span> Specify the network interface (e.g., eth0).</li>
+<li><span class="tt">-f</span>, <span class="tt">--file</span> Read payload data from a specified file.</li>
+<li><span class="tt">-m</span>, <span class="tt">--mac-address-destantion</span> Set the destination MAC address.</li>
+<li><span class="tt">-a</span>, <span class="tt">--mac-address-source</span> Set the source MAC address.</li>
+</ul>
+<p><b>Payload Logic:</b></p><ol type="1">
+<li>If <span class="tt">-w</span> or <span class="tt">-f</span> is provided, the data is pulled from those sources.</li>
+<li>If no source flag is provided, the program concatenates all remaining positional arguments (argv) into a single space-separated string payload.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>The number of command-line arguments. </td></tr>
+    <tr><td class="paramname">argv</td><td>The array of command-line argument strings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li><span class="tt">0</span> on successful transmission.</li>
+<li><span class="tt">-1</span> if memory allocation fails (<span class="tt"><a class="el" href="group__UdpPack.html#gac073209d13c5a0e425b547924759b90f" title="Function for create object UDP package.">init_udp_pack</a></span>).</li>
+<li>Non-zero error code if packet configuration or sending fails. </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>

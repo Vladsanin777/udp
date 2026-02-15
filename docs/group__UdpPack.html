@@ -139,10 +139,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga4518c906c2ff7bcd466135f4457eb917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting source ip address in UDP package.  <br /></td></tr>
 <tr class="memitem:ga9c92f03fd8bcd80c0a8717d8511f96bc" id="r_ga9c92f03fd8bcd80c0a8717d8511f96bc"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="#ga9c92f03fd8bcd80c0a8717d8511f96bc">set_ip_address_destantion_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const char *const ip)</td></tr>
 <tr class="memdesc:ga9c92f03fd8bcd80c0a8717d8511f96bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for setting destantion ip address in UDP package.  <br /></td></tr>
-<tr class="memitem:ga82c7f136a32df0299f5e5563094fbc4a" id="r_ga82c7f136a32df0299f5e5563094fbc4a"><td class="memItemLeft">uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
-<tr class="memdesc:ga82c7f136a32df0299f5e5563094fbc4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function give size data in UDP package.  <br /></td></tr>
-<tr class="memitem:ga5084a9ee28a51e81d4f1972b102a8883" id="r_ga5084a9ee28a51e81d4f1972b102a8883"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="#ga5084a9ee28a51e81d4f1972b102a8883">add_date_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, void *data, uint16_t size)</td></tr>
-<tr class="memdesc:ga5084a9ee28a51e81d4f1972b102a8883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function addition data in UDP package.  <br /></td></tr>
+<tr class="memitem:ga367dbfef9bf2e55dbb3443861f82e76d" id="r_ga367dbfef9bf2e55dbb3443861f82e76d"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="#ga367dbfef9bf2e55dbb3443861f82e76d">add_data_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, void *data, uint16_t size)</td></tr>
+<tr class="memdesc:ga367dbfef9bf2e55dbb3443861f82e76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function addition data in UDP package.  <br /></td></tr>
 <tr class="memitem:ga6215aa14b1ee5e7d0e14a0939a27afa2" id="r_ga6215aa14b1ee5e7d0e14a0939a27afa2"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="#ga6215aa14b1ee5e7d0e14a0939a27afa2">set_data_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, void *data, const uint16_t size)</td></tr>
 <tr class="memdesc:ga6215aa14b1ee5e7d0e14a0939a27afa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function overriding data in UDP package.  <br /></td></tr>
 <tr class="memitem:ga9f171c629d5f8a7ff24ccd920dd0bf69" id="r_ga9f171c629d5f8a7ff24ccd920dd0bf69"><td class="memItemLeft">ssize_t&#160;</td><td class="memItemRight"><a class="el" href="#ga9f171c629d5f8a7ff24ccd920dd0bf69">add_byte_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack, const uint8_t byte)</td></tr>
@@ -173,6 +171,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga51bca39eb65c7b8f6e34938d278bdedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting ip address source.  <br /></td></tr>
 <tr class="memitem:ga45f59892166b06c807f354c942ccd5dc" id="r_ga45f59892166b06c807f354c942ccd5dc"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="#ga45f59892166b06c807f354c942ccd5dc">get_ip_address_destantion_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
 <tr class="memdesc:ga45f59892166b06c807f354c942ccd5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting ip address destantion.  <br /></td></tr>
+<tr class="memitem:ga82c7f136a32df0299f5e5563094fbc4a" id="r_ga82c7f136a32df0299f5e5563094fbc4a"><td class="memItemLeft">uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
+<tr class="memdesc:ga82c7f136a32df0299f5e5563094fbc4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting size data.  <br /></td></tr>
 <tr class="memitem:ga19e05e94bf630dbc97584b734ef176df" id="r_ga19e05e94bf630dbc97584b734ef176df"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="#ga19e05e94bf630dbc97584b734ef176df">get_data_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
 <tr class="memdesc:ga19e05e94bf630dbc97584b734ef176df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for getting data.  <br /></td></tr>
 <tr class="memitem:ga41d3c898afbfea462344aa3615b28c1c" id="r_ga41d3c898afbfea462344aa3615b28c1c"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="#ga41d3c898afbfea462344aa3615b28c1c">get_data_hex_udp_pack</a> (<a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack)</td></tr>
@@ -256,25 +256,30 @@ Variables</h2></td></tr>
 <div class="line">    ret = -1;</div>
 <div class="line">    <span class="keywordflow">goto</span> get_not_udp_pack;</div>
 <div class="line">}</div>
-<div class="line">set_date_udp_pack(pack, <span class="charliteral">&#39;n&#39;</span>);</div>
-<div class="line">set_date_udp_pack(pack, <span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line">ret = <a class="code hl_function" href="#ga9f171c629d5f8a7ff24ccd920dd0bf69">add_byte_udp_pack</a>(pack, <span class="charliteral">&#39;n&#39;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (ret)</div>
+<div class="line">    <span class="keywordflow">goto</span> add_not_byte;</div>
+<div class="line">ret = <a class="code hl_function" href="#ga9f171c629d5f8a7ff24ccd920dd0bf69">add_byte_udp_pack</a>(pack, <span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line">    <span class="keywordflow">goto</span> add_not_byte;</div>
+<div class="line">add_not_byte:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
 <div class="ttc" id="agroup__UdpPack_html_ga6356b6b21b2a1a5c62a7d1085eb6f025"><div class="ttname"><a href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a></div><div class="ttdeci">struct udp_pack * udp_pack_t</div><div class="ttdoc">UDP packet descriptor.</div><div class="ttdef"><b>Definition</b> udp.h:26</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga9f171c629d5f8a7ff24ccd920dd0bf69"><div class="ttname"><a href="#ga9f171c629d5f8a7ff24ccd920dd0bf69">add_byte_udp_pack</a></div><div class="ttdeci">ssize_t add_byte_udp_pack(udp_pack_t pack, uint8_t byte)</div><div class="ttdoc">Function addition byte in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:231</div></div>
 <div class="ttc" id="agroup__UdpPack_html_gac073209d13c5a0e425b547924759b90f"><div class="ttname"><a href="#gac073209d13c5a0e425b547924759b90f">init_udp_pack</a></div><div class="ttdeci">udp_pack_t init_udp_pack(void)</div><div class="ttdoc">Function for create object UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:73</div></div>
-<div class="ttc" id="agroup__UdpPack_html_gae2b2cb87ed580f5384fce15a6599f364"><div class="ttname"><a href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a></div><div class="ttdeci">void destroy_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function free UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:771</div></div>
+<div class="ttc" id="agroup__UdpPack_html_gae2b2cb87ed580f5384fce15a6599f364"><div class="ttname"><a href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a></div><div class="ttdeci">void destroy_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function free UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:774</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="ga5084a9ee28a51e81d4f1972b102a8883" name="ga5084a9ee28a51e81d4f1972b102a8883"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5084a9ee28a51e81d4f1972b102a8883">&#9670;&#160;</a></span>add_date_udp_pack()</h2>
+<a id="ga367dbfef9bf2e55dbb3443861f82e76d" name="ga367dbfef9bf2e55dbb3443861f82e76d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga367dbfef9bf2e55dbb3443861f82e76d">&#9670;&#160;</a></span>add_data_udp_pack()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ssize_t add_date_udp_pack </td>
+          <td class="memname">ssize_t add_data_udp_pack </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a></td>          <td class="paramname"><span class="paramname"><em>pack</em></span>, </td>
         </tr>
@@ -308,10 +313,13 @@ Variables</h2></td></tr>
 <div class="line">    ret = -1;</div>
 <div class="line">    <span class="keywordflow">goto</span> get_not_udp_pack;</div>
 <div class="line">}</div>
-<div class="line"><a class="code hl_function" href="#ga5084a9ee28a51e81d4f1972b102a8883">add_date_udp_pack</a>(pack, message, strlen(message));</div>
+<div class="line">ret = <a class="code hl_function" href="#ga367dbfef9bf2e55dbb3443861f82e76d">add_data_udp_pack</a>(pack, message, strlen(message));</div>
+<div class="line"><span class="keywordflow">if</span> (ret == -1)</div>
+<div class="line">    gotov add_not_data;</div>
+<div class="line">add_not_data:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga5084a9ee28a51e81d4f1972b102a8883"><div class="ttname"><a href="#ga5084a9ee28a51e81d4f1972b102a8883">add_date_udp_pack</a></div><div class="ttdeci">ssize_t add_date_udp_pack(udp_pack_t pack, void *data, const uint16_t size)</div><div class="ttdoc">Function addition data in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:194</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga367dbfef9bf2e55dbb3443861f82e76d"><div class="ttname"><a href="#ga367dbfef9bf2e55dbb3443861f82e76d">add_data_udp_pack</a></div><div class="ttdeci">ssize_t add_data_udp_pack(udp_pack_t pack, void *data, const uint16_t size)</div><div class="ttdoc">Function addition data in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:194</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -502,7 +510,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="comment">// other code whit udp_pack_t</span></div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga19e05e94bf630dbc97584b734ef176df"><div class="ttname"><a href="#ga19e05e94bf630dbc97584b734ef176df">get_data_udp_pack</a></div><div class="ttdeci">char * get_data_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting data.</div><div class="ttdef"><b>Definition</b> udp.c:752</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga19e05e94bf630dbc97584b734ef176df"><div class="ttname"><a href="#ga19e05e94bf630dbc97584b734ef176df">get_data_udp_pack</a></div><div class="ttdeci">char * get_data_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting data.</div><div class="ttdef"><b>Definition</b> udp.c:755</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -553,7 +561,7 @@ You can call <a class="el" href="#ga6c39bc361feefc6b011fb569fa8d3b00" title="set
 <div class="line">setting_not_interface:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga6c39bc361feefc6b011fb569fa8d3b00"><div class="ttname"><a href="#ga6c39bc361feefc6b011fb569fa8d3b00">set_interface_udp_pack</a></div><div class="ttdeci">ssize_t set_interface_udp_pack(udp_pack_t pack, const char *const interface)</div><div class="ttdoc">Function for pick interface to send UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:379</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga6c39bc361feefc6b011fb569fa8d3b00"><div class="ttname"><a href="#ga6c39bc361feefc6b011fb569fa8d3b00">set_interface_udp_pack</a></div><div class="ttdeci">ssize_t set_interface_udp_pack(udp_pack_t pack, const char *const interface)</div><div class="ttdoc">Function for pick interface to send UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:382</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -655,7 +663,7 @@ You can call <a class="el" href="#ga4518c906c2ff7bcd466135f4457eb917" title="set
 <div class="line">setting_not_ip_address:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga51bca39eb65c7b8f6e34938d278bdedd"><div class="ttname"><a href="#ga51bca39eb65c7b8f6e34938d278bdedd">get_ip_address_source_udp_pack</a></div><div class="ttdeci">char * get_ip_address_source_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting ip address source.</div><div class="ttdef"><b>Definition</b> udp.c:514</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga51bca39eb65c7b8f6e34938d278bdedd"><div class="ttname"><a href="#ga51bca39eb65c7b8f6e34938d278bdedd">get_ip_address_source_udp_pack</a></div><div class="ttdeci">char * get_ip_address_source_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting ip address source.</div><div class="ttdef"><b>Definition</b> udp.c:517</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -703,8 +711,8 @@ You can call <a class="el" href="#gabd1e12a15ac9abc09d83ce930b38ae8a" title="set
 <div class="line">setting_not_mac_address:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_gabd1e12a15ac9abc09d83ce930b38ae8a"><div class="ttname"><a href="#gabd1e12a15ac9abc09d83ce930b38ae8a">set_mac_address_destantion_udp_pack</a></div><div class="ttdeci">ssize_t set_mac_address_destantion_udp_pack(udp_pack_t pack, const char *const mac_address)</div><div class="ttdoc">Function setting mac address for destantion.</div><div class="ttdef"><b>Definition</b> udp.c:490</div></div>
-<div class="ttc" id="agroup__UdpPack_html_gaebc458fc40b923dfe0589e7f341acdf6"><div class="ttname"><a href="#gaebc458fc40b923dfe0589e7f341acdf6">get_mac_address_destantion_udp_pack</a></div><div class="ttdeci">char * get_mac_address_destantion_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function setting mac address for destantion.</div><div class="ttdef"><b>Definition</b> udp.c:577</div></div>
+<div class="ttc" id="agroup__UdpPack_html_gabd1e12a15ac9abc09d83ce930b38ae8a"><div class="ttname"><a href="#gabd1e12a15ac9abc09d83ce930b38ae8a">set_mac_address_destantion_udp_pack</a></div><div class="ttdeci">ssize_t set_mac_address_destantion_udp_pack(udp_pack_t pack, const char *const mac_address)</div><div class="ttdoc">Function setting mac address for destantion.</div><div class="ttdef"><b>Definition</b> udp.c:493</div></div>
+<div class="ttc" id="agroup__UdpPack_html_gaebc458fc40b923dfe0589e7f341acdf6"><div class="ttname"><a href="#gaebc458fc40b923dfe0589e7f341acdf6">get_mac_address_destantion_udp_pack</a></div><div class="ttdeci">char * get_mac_address_destantion_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function setting mac address for destantion.</div><div class="ttdef"><b>Definition</b> udp.c:580</div></div>
 <div class="ttc" id="astructudp__pack_html"><div class="ttname"><a href="structudp__pack.html">udp_pack</a></div><div class="ttdoc">Struct is UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:65</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -753,8 +761,8 @@ You can call <a class="el" href="#ga84f3d8d0bdf4a67eec9f41953d14bda3" title="set
 <div class="line">setting_not_mac_address:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga01073fc5ad591e38da01f4387c19e69a"><div class="ttname"><a href="#ga01073fc5ad591e38da01f4387c19e69a">get_mac_address_source_udp_pack</a></div><div class="ttdeci">char * get_mac_address_source_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function getting mac address for source.</div><div class="ttdef"><b>Definition</b> udp.c:556</div></div>
-<div class="ttc" id="agroup__UdpPack_html_ga84f3d8d0bdf4a67eec9f41953d14bda3"><div class="ttname"><a href="#ga84f3d8d0bdf4a67eec9f41953d14bda3">set_mac_address_source_udp_pack</a></div><div class="ttdeci">ssize_t set_mac_address_source_udp_pack(udp_pack_t pack, const char *const mac_address)</div><div class="ttdoc">Function setting mac address for source.</div><div class="ttdef"><b>Definition</b> udp.c:466</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga01073fc5ad591e38da01f4387c19e69a"><div class="ttname"><a href="#ga01073fc5ad591e38da01f4387c19e69a">get_mac_address_source_udp_pack</a></div><div class="ttdeci">char * get_mac_address_source_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function getting mac address for source.</div><div class="ttdef"><b>Definition</b> udp.c:559</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga84f3d8d0bdf4a67eec9f41953d14bda3"><div class="ttname"><a href="#ga84f3d8d0bdf4a67eec9f41953d14bda3">set_mac_address_source_udp_pack</a></div><div class="ttdeci">ssize_t set_mac_address_source_udp_pack(udp_pack_t pack, const char *const mac_address)</div><div class="ttdoc">Function setting mac address for source.</div><div class="ttdef"><b>Definition</b> udp.c:469</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -841,7 +849,7 @@ You can call <a class="el" href="#ga34e91a82fe5ba0ff36b8b7a4162d2219" title="set
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
 <div class="ttc" id="agroup__UdpPack_html_ga34e91a82fe5ba0ff36b8b7a4162d2219"><div class="ttname"><a href="#ga34e91a82fe5ba0ff36b8b7a4162d2219">set_port_destantion_udp_pack</a></div><div class="ttdeci">ssize_t set_port_destantion_udp_pack(udp_pack_t pack, const char *const port)</div><div class="ttdoc">Function for setting destantion port in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:137</div></div>
-<div class="ttc" id="agroup__UdpPack_html_ga85eee6188e607d0ee01af4ce1045e1f2"><div class="ttname"><a href="#ga85eee6188e607d0ee01af4ce1045e1f2">get_port_destantion_udp_pack</a></div><div class="ttdeci">char * get_port_destantion_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting port destantion.</div><div class="ttdef"><b>Definition</b> udp.c:598</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga85eee6188e607d0ee01af4ce1045e1f2"><div class="ttname"><a href="#ga85eee6188e607d0ee01af4ce1045e1f2">get_port_destantion_udp_pack</a></div><div class="ttdeci">char * get_port_destantion_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting port destantion.</div><div class="ttdef"><b>Definition</b> udp.c:601</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -892,7 +900,7 @@ You can call <a class="el" href="#gaf1e2ebce0c63dad760436f66b5cca525" title="set
 <div class="line">setting_not_port_source:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga629ad0b2e51e286471cb9fd9fbbb215f"><div class="ttname"><a href="#ga629ad0b2e51e286471cb9fd9fbbb215f">get_port_source_udp_pack</a></div><div class="ttdeci">char * get_port_source_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting port source.</div><div class="ttdef"><b>Definition</b> udp.c:614</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga629ad0b2e51e286471cb9fd9fbbb215f"><div class="ttname"><a href="#ga629ad0b2e51e286471cb9fd9fbbb215f">get_port_source_udp_pack</a></div><div class="ttdeci">char * get_port_source_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting port source.</div><div class="ttdef"><b>Definition</b> udp.c:617</div></div>
 <div class="ttc" id="agroup__UdpPack_html_gaf1e2ebce0c63dad760436f66b5cca525"><div class="ttname"><a href="#gaf1e2ebce0c63dad760436f66b5cca525">set_port_source_udp_pack</a></div><div class="ttdeci">ssize_t set_port_source_udp_pack(udp_pack_t pack, const char *const port)</div><div class="ttdoc">Function for setting source port in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:123</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -913,82 +921,35 @@ You can call <a class="el" href="#gaf1e2ebce0c63dad760436f66b5cca525" title="set
       </table>
 </div><div class="memdoc">
 
-<p>Function give size data in UDP package. </p>
-<p>Function for getting size data.</p>
-<dl class="section note"><dt>Note</dt><dd>You must call <a class="el" href="#gac073209d13c5a0e425b547924759b90f" title="init_udp_pack">init_udp_pack</a> before this. </dd></dl>
+<p>Function for getting size data. </p>
+<dl class="section note"><dt>Note</dt><dd>You must call <a class="el" href="#gac073209d13c5a0e425b547924759b90f" title="init_udp_pack">init_udp_pack</a> before this. </dd>
+<dd>
+You can call <a class="el" href="#ga6215aa14b1ee5e7d0e14a0939a27afa2" title="set_data_udp_pack">set_data_udp_pack</a> before this. </dd>
+<dd>
+You can call <a class="el" href="#ga367dbfef9bf2e55dbb3443861f82e76d" title="add_data_udp_pack">add_data_udp_pack</a> before this. </dd>
+<dd>
+You can call <a class="el" href="#ga9f171c629d5f8a7ff24ccd920dd0bf69" title="add_byte_udp_pack">add_byte_udp_pack</a> before this. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">pack</td><td>UDP package for work. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>size data in UDP package. Usage example. <div class="fragment"><div class="line">ssize_t ret = 0;</div>
+<dl class="section return"><dt>Returns</dt><dd>Length data in UDP package. Usage example. <div class="fragment"><div class="line">ssize_t ret = 0;</div>
 <div class="line"><a class="code hl_typedef" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack = <a class="code hl_function" href="#gac073209d13c5a0e425b547924759b90f">init_udp_pack</a>();</div>
 <div class="line"><span class="keywordflow">if</span> (pack == NULL) {</div>
 <div class="line">    ret = -1;</div>
 <div class="line">    <span class="keywordflow">goto</span> get_not_udp_pack;</div>
 <div class="line">}</div>
-<div class="line"><a class="code hl_function" href="#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a>(pack);</div>
+<div class="line">{</div>
+<div class="line">    uint16_t size_data = <a class="code hl_function" href="#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a>(pack);</div>
+<div class="line">    <span class="comment">// other code whit udp_pack_t</span></div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// other code whit udp_pack_t</span></div>
+<div class="line">getting_not_size_data:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
 <div class="ttc" id="agroup__UdpPack_html_ga82c7f136a32df0299f5e5563094fbc4a"><div class="ttname"><a href="#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a></div><div class="ttdeci">uint16_t get_size_data_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function for getting size data.</div><div class="ttdef"><b>Definition</b> udp.c:189</div></div>
-</div><!-- fragment --></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>You must call <a class="el" href="#gac073209d13c5a0e425b547924759b90f" title="init_udp_pack">init_udp_pack</a> before this. </dd>
-<dd>
-You can call <a class="el" href="#ga6215aa14b1ee5e7d0e14a0939a27afa2" title="set_data_udp_pack">set_data_udp_pack</a> before this. </dd>
-<dd>
-You can call add_data_udp_pack before this. </dd>
-<dd>
-You can call add_symbol_udp_pack before this. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">pack</td><td>UDP package for work. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Length data in UDP package. Usage example. <div class="fragment"><div class="line">ssize_t ret = 0;</div>
-<div class="line"><a class="code hl_typedef" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack = <a class="code hl_function" href="#gac073209d13c5a0e425b547924759b90f">init_udp_pack</a>();</div>
-<div class="line"><span class="keywordflow">if</span> (pack == NULL) {</div>
-<div class="line">    ret = -1;</div>
-<div class="line">    <span class="keywordflow">goto</span> get_not_udp_pack;</div>
-<div class="line">}</div>
-<div class="line">{</div>
-<div class="line">    uint16_t size_data = <a class="code hl_function" href="#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a>(pack);</div>
-<div class="line">    <span class="comment">// other code whit udp_pack_t</span></div>
-<div class="line">}</div>
-<div class="line"><span class="comment">// other code whit udp_pack_t</span></div>
-<div class="line">getting_not_size_data:</div>
-<div class="line">get_not_udp_pack:</div>
-<div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-</div><!-- fragment --></dd></dl>
-<p>Function give size data in UDP package.</p>
-<dl class="section note"><dt>Note</dt><dd>You must call <a class="el" href="#gac073209d13c5a0e425b547924759b90f" title="init_udp_pack">init_udp_pack</a> before this. </dd>
-<dd>
-You can call <a class="el" href="#ga6215aa14b1ee5e7d0e14a0939a27afa2" title="set_data_udp_pack">set_data_udp_pack</a> before this. </dd>
-<dd>
-You can call add_data_udp_pack before this. </dd>
-<dd>
-You can call add_symbol_udp_pack before this. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">pack</td><td>UDP package for work. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Length data in UDP package. Usage example. <div class="fragment"><div class="line">ssize_t ret = 0;</div>
-<div class="line"><a class="code hl_typedef" href="#ga6356b6b21b2a1a5c62a7d1085eb6f025">udp_pack_t</a> pack = <a class="code hl_function" href="#gac073209d13c5a0e425b547924759b90f">init_udp_pack</a>();</div>
-<div class="line"><span class="keywordflow">if</span> (pack == NULL) {</div>
-<div class="line">    ret = -1;</div>
-<div class="line">    <span class="keywordflow">goto</span> get_not_udp_pack;</div>
-<div class="line">}</div>
-<div class="line">{</div>
-<div class="line">    uint16_t size_data = <a class="code hl_function" href="#ga82c7f136a32df0299f5e5563094fbc4a">get_size_data_udp_pack</a>(pack);</div>
-<div class="line">    <span class="comment">// other code whit udp_pack_t</span></div>
-<div class="line">}</div>
-<div class="line"><span class="comment">// other code whit udp_pack_t</span></div>
-<div class="line">getting_not_size_data:</div>
-<div class="line">get_not_udp_pack:</div>
-<div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1019,7 +980,7 @@ You can call add_symbol_udp_pack before this. </dd></dl>
 <p>Function return mac address in big endian. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">pack</td><td>UDP package for work. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac_address</td><td>String mac addres. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1129,7 +1090,7 @@ You can call add_symbol_udp_pack before this. </dd></dl>
 <div class="line">print_not_udp_pack:</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_gaefb857160af3891be362e938b6955c88"><div class="ttname"><a href="#gaefb857160af3891be362e938b6955c88">print_udp_pack</a></div><div class="ttdeci">ssize_t print_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function print all info about udp pack.</div><div class="ttdef"><b>Definition</b> udp.c:630</div></div>
+<div class="ttc" id="agroup__UdpPack_html_gaefb857160af3891be362e938b6955c88"><div class="ttname"><a href="#gaefb857160af3891be362e938b6955c88">print_udp_pack</a></div><div class="ttdeci">ssize_t print_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function print all info about udp pack.</div><div class="ttdef"><b>Definition</b> udp.c:633</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1166,7 +1127,7 @@ You can call add_symbol_udp_pack before this. </dd></dl>
 <div class="line"><a class="code hl_function" href="#ga4cb18d49955b5f28a3b5087c585ef31c">send_udp_pack</a>(pack);</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga4cb18d49955b5f28a3b5087c585ef31c"><div class="ttname"><a href="#ga4cb18d49955b5f28a3b5087c585ef31c">send_udp_pack</a></div><div class="ttdeci">ssize_t send_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function to send UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:399</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga4cb18d49955b5f28a3b5087c585ef31c"><div class="ttname"><a href="#ga4cb18d49955b5f28a3b5087c585ef31c">send_udp_pack</a></div><div class="ttdeci">ssize_t send_udp_pack(udp_pack_t pack)</div><div class="ttdoc">Function to send UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:402</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1212,9 +1173,10 @@ You can call add_symbol_udp_pack before this. </dd></dl>
 <div class="line">    ret = -1;</div>
 <div class="line">    <span class="keywordflow">goto</span> get_not_udp_pack;</div>
 <div class="line">}</div>
-<div class="line">set_date_udp_pack(pack, message, strlen(message));</div>
+<div class="line"><a class="code hl_function" href="#ga6215aa14b1ee5e7d0e14a0939a27afa2">set_data_udp_pack</a>(pack, message, strlen(message));</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
+<div class="ttc" id="agroup__UdpPack_html_ga6215aa14b1ee5e7d0e14a0939a27afa2"><div class="ttname"><a href="#ga6215aa14b1ee5e7d0e14a0939a27afa2">set_data_udp_pack</a></div><div class="ttdeci">ssize_t set_data_udp_pack(udp_pack_t pack, void *data, uint16_t size)</div><div class="ttdoc">Function overriding data in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:216</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1256,7 +1218,7 @@ You can call add_symbol_udp_pack before this. </dd></dl>
 <div class="line"><a class="code hl_function" href="#ga0e4c3a45b2cddd95cd6369ce1138eea1">set_file_data_udp_pack</a>(pack, <span class="stringliteral">&quot;Hello.txt&quot;</span>);</div>
 <div class="line">get_not_udp_pack:</div>
 <div class="line"><a class="code hl_function" href="#gae2b2cb87ed580f5384fce15a6599f364">destroy_udp_pack</a>(pack);</div>
-<div class="ttc" id="agroup__UdpPack_html_ga0e4c3a45b2cddd95cd6369ce1138eea1"><div class="ttname"><a href="#ga0e4c3a45b2cddd95cd6369ce1138eea1">set_file_data_udp_pack</a></div><div class="ttdeci">ssize_t set_file_data_udp_pack(udp_pack_t pack, const char *const file_name)</div><div class="ttdoc">Function read data from file in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:259</div></div>
+<div class="ttc" id="agroup__UdpPack_html_ga0e4c3a45b2cddd95cd6369ce1138eea1"><div class="ttname"><a href="#ga0e4c3a45b2cddd95cd6369ce1138eea1">set_file_data_udp_pack</a></div><div class="ttdeci">ssize_t set_file_data_udp_pack(udp_pack_t pack, const char *const file_name)</div><div class="ttdoc">Function read data from file in UDP package.</div><div class="ttdef"><b>Definition</b> udp.c:262</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

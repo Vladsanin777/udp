@@ -2,7 +2,7 @@ var udp_8h =
 [
     [ "udp_pack_t", "group__UdpPack.html#ga6356b6b21b2a1a5c62a7d1085eb6f025", null ],
     [ "add_byte_udp_pack", "group__UdpPack.html#ga9f171c629d5f8a7ff24ccd920dd0bf69", null ],
-    [ "add_date_udp_pack", "group__UdpPack.html#ga5084a9ee28a51e81d4f1972b102a8883", null ],
+    [ "add_data_udp_pack", "group__UdpPack.html#ga367dbfef9bf2e55dbb3443861f82e76d", null ],
     [ "destroy_udp_pack", "group__UdpPack.html#gae2b2cb87ed580f5384fce15a6599f364", null ],
     [ "get_data_hex_udp_pack", "group__UdpPack.html#ga41d3c898afbfea462344aa3615b28c1c", null ],
     [ "get_data_udp_pack", "group__UdpPack.html#ga19e05e94bf630dbc97584b734ef176df", null ],

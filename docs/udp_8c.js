@@ -10,7 +10,7 @@ var udp_8c =
     [ "NULL_CHECKSUM", "udp_8c.html#aee522b95f75b45cd12aeff278dcfe436", null ],
     [ "PACKED", "group__UdpPack.html#ga0d38284fa20d6a5468680588f26778c8", null ],
     [ "add_byte_udp_pack", "group__UdpPack.html#ga9f171c629d5f8a7ff24ccd920dd0bf69", null ],
-    [ "add_date_udp_pack", "group__UdpPack.html#ga5084a9ee28a51e81d4f1972b102a8883", null ],
+    [ "add_data_udp_pack", "group__UdpPack.html#ga367dbfef9bf2e55dbb3443861f82e76d", null ],
     [ "calculate_checksum_udp_pack", "group__UdpPack.html#ga43bd25d43834b433711fdf4b1ee6fd8e", null ],
     [ "checksum_compute", "group__UdpPack.html#ga66ca52b0aa857eb5f90b5be48a251a73", null ],
     [ "destroy_udp_pack", "group__UdpPack.html#gae2b2cb87ed580f5384fce15a6599f364", null ],

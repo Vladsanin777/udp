@@ -110,7 +110,7 @@ int main(int argc, char ** argv) {
 exit_parsing_comand:
     if (data == '\0') {
         for (; optind < argc - 1; optind++) {
-            ret = add_date_udp_pack(pack, argv[optind], strlen(argv[optind]));
+            ret = add_data_udp_pack(pack, argv[optind], strlen(argv[optind]));
             if (ret)
                 goto error_in_action;
 
@@ -118,7 +118,7 @@ exit_parsing_comand:
             if (ret)
                 goto error_in_action;
         }
-        ret = add_date_udp_pack(pack, argv[optind], strlen(argv[optind]));
+        ret = add_data_udp_pack(pack, argv[optind], strlen(argv[optind]));
         if (ret)
             goto error_in_action;
         ret = add_byte_udp_pack(pack, '\0');

@@ -191,7 +191,7 @@ uint16_t get_size_data_udp_pack(udp_pack_t pack) {
 }
 
 
-ssize_t add_date_udp_pack(udp_pack_t pack, void * data, \
+ssize_t add_data_udp_pack(udp_pack_t pack, void * data, \
         const uint16_t size) {
     int ret = 0;
     void * ptr = NULL;
@@ -442,7 +442,7 @@ give_not_siocgifindex:
 /**
  * @ingroup UdpPack
  * @brief Function return mac address in big endian.
- * @param[in,out] pack UDP package for work.
+ * @param[in] mac_address String mac addres.
  * @return Getting buffer mac address.
  * @note This function is private. Not used outside udp_lib/udp.c
  */

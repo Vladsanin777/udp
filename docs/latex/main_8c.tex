@@ -8,7 +8,7 @@
 \begin{DoxyCompactItemize}
 \item 
 int \doxymbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Entry point for the UDP packet crafting and transmission utility. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-func-members}
@@ -20,3 +20,44 @@ int \doxymbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int 
 {\footnotesize\ttfamily \label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
 int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
 
+
+
+Entry point for the UDP packet crafting and transmission utility. 
+
+This program parses command-\/line arguments to build a custom UDP packet. It allows configuration of MAC addresses, IP addresses, ports, and payload data.
+
+{\bfseries{Command-\/line Options:\+}}
+\begin{DoxyItemize}
+\item {\ttfamily -\/w}, {\ttfamily -\/-\/stdio} Read payload data from standard input.
+\item {\ttfamily -\/e}, {\ttfamily -\/-\/print} Print the packet structure to the console before sending.
+\item {\ttfamily -\/i}, {\ttfamily -\/-\/ip-\/address-\/destination} Set the destination IPv4 address.
+\item {\ttfamily -\/s}, {\ttfamily -\/-\/ip-\/address-\/source} Set the source IPv4 address.
+\item {\ttfamily -\/p}, {\ttfamily -\/-\/port-\/destanition} Set the destination UDP port.
+\item {\ttfamily -\/o}, {\ttfamily -\/-\/port-\/source} Set the source UDP port.
+\item {\ttfamily -\/n}, {\ttfamily -\/-\/interface} Specify the network interface (e.\+g., eth0).
+\item {\ttfamily -\/f}, {\ttfamily -\/-\/file} Read payload data from a specified file.
+\item {\ttfamily -\/m}, {\ttfamily -\/-\/mac-\/address-\/destantion} Set the destination MAC address.
+\item {\ttfamily -\/a}, {\ttfamily -\/-\/mac-\/address-\/source} Set the source MAC address.
+\end{DoxyItemize}
+
+{\bfseries{Payload Logic:\+}}
+\begin{DoxyEnumerate}
+\item If {\ttfamily -\/w} or {\ttfamily -\/f} is provided, the data is pulled from those sources.
+\item If no source flag is provided, the program concatenates all remaining positional arguments (argv) into a single space-\/separated string payload.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command-\/line arguments. \\
+\hline
+{\em argv} & The array of command-\/line argument strings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily 0} on successful transmission.
+\item {\ttfamily -\/1} if memory allocation fails ({\ttfamily \doxylink{group__UdpPack_gac073209d13c5a0e425b547924759b90f}{init\+\_\+udp\+\_\+pack}}).
+\item Non-\/zero error code if packet configuration or sending fails. 
+\end{DoxyItemize}
+\end{DoxyReturn}
