@@ -250,6 +250,9 @@ ssize_t set_input_data_udp_pack(udp_pack_t pack) {
         if (ret)
             goto error_overflow_max_size;
     }
+    ret = add_byte_udp_pack(pack, '\0');
+    if (ret)
+        goto error_overflow_max_size;
     return ret;
 error_overflow_max_size:
     return ret;
