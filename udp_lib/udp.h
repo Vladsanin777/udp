@@ -139,26 +139,6 @@ ssize_t set_ip_address_destantion_udp_pack( \
         udp_pack_t pack, const char * const ip);
 
 /**
- * @brief Function give size data in UDP package.
- * @note You must call @ref init_udp_pack before this.
- * @param[in,out] pack UDP package for work.
- * @return size data in UDP package.
- * Usage example.
- * @code
- * ssize_t ret = 0;
- * udp_pack_t pack = init_udp_pack();
- * if (pack == NULL) {
- *     ret = -1;
- *     goto get_not_udp_pack;
- * }
- * get_size_data_udp_pack(pack);
- * get_not_udp_pack:
- * destroy_udp_pack(pack);
- * @endcode
- */
-uint16_t get_size_data_udp_pack(udp_pack_t pack);
-
-/**
  * @brief Function addition data in UDP package.
  * @note You must call @ref init_udp_pack before this.
  * @param[in,out] pack UDP package for work.
@@ -174,12 +154,15 @@ uint16_t get_size_data_udp_pack(udp_pack_t pack);
  *     ret = -1;
  *     goto get_not_udp_pack;
  * }
- * add_date_udp_pack(pack, message, strlen(message));
+ * ret = add_data_udp_pack(pack, message, strlen(message));
+ * if (ret == -1)
+ *     gotov add_not_data;
+ * add_not_data:
  * get_not_udp_pack:
  * destroy_udp_pack(pack);
  * @endcode
  */
-ssize_t add_date_udp_pack(udp_pack_t pack, void * data, uint16_t size);
+ssize_t add_data_udp_pack(udp_pack_t pack, void * data, uint16_t size);
 
 /**
  * @brief Function overriding data in UDP package.
@@ -197,7 +180,7 @@ ssize_t add_date_udp_pack(udp_pack_t pack, void * data, uint16_t size);
  *     ret = -1;
  *     goto get_not_udp_pack;
  * }
- * set_date_udp_pack(pack, message, strlen(message));
+ * set_data_udp_pack(pack, message, strlen(message));
  * get_not_udp_pack:
  * destroy_udp_pack(pack);
  * @endcode
@@ -219,8 +202,12 @@ ssize_t set_data_udp_pack(udp_pack_t pack, void * data,  \
  *     ret = -1;
  *     goto get_not_udp_pack;
  * }
- * set_date_udp_pack(pack, 'n');
- * set_date_udp_pack(pack, '\0');
+ * ret = add_byte_udp_pack(pack, 'n');
+ * if (ret)
+ *     goto add_not_byte;
+ * ret = add_byte_udp_pack(pack, '\0');
+ *     goto add_not_byte;
+ * add_not_byte:
  * get_not_udp_pack:
  * destroy_udp_pack(pack);
  * @endcode
@@ -594,7 +581,7 @@ char * get_ip_address_destantion_udp_pack(udp_pack_t pack);
  * @note You must call @ref init_udp_pack before this.
  * @note You can call @ref set_data_udp_pack before this.
  * @note You can call @ref add_data_udp_pack before this.
- * @note You can call @ref add_symbol_udp_pack before this.
+ * @note You can call @ref add_byte_udp_pack before this.
  * @param[in,out] pack UDP package for work.
  * @return Length data in UDP package.
  * Usage example.
